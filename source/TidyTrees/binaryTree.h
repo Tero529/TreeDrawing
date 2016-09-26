@@ -6,20 +6,21 @@
 
 
 typedef struct nodet node;
+int maxHeight=0;
 
 node *createNode(int InputValue,node *parent);
 node *createTree(void);
 node *treeHelper(int inputValues[],int n);
-int getHeight(node *root);
-void inorder(node *root);
+void inorder(node *root,int height);
 
 
 struct nodet{
 	int value;
 	node *left,*right,*father;
 	int xPos,yPos;
-	int status;
+	enum s{FIRST_VISIT , LEFT_VISIT , RIGHT_VISIT } status;
 	int modifier;
+	int nodeheight;
 };
 
 node *createNode(int InputValue,node *parent){
@@ -30,6 +31,7 @@ node *createNode(int InputValue,node *parent){
 	temp->right=NULL;
 	temp->father=parent;
 	temp->modifier=0;
+	temp->nodeheight=0;
 	return temp;
 }
 
@@ -43,7 +45,7 @@ node *createTree(void){
 			scanf("%d",&inputValues[counter]);
 		node *root=treeHelper(inputValues,n);
 		printf("Tree created is (inorder representation)\n");
-		inorder(root);
+		inorder(root,0);
 		printf("\n");
 		return root;
 }
@@ -77,11 +79,14 @@ node *treeHelper(int inputValues[],int n){
 	return root;
 }
 
-void inorder(node *root){
+void inorder(node *root,int height){
 	if(root!=NULL){
-		inorder(root->left);
+		root->nodeheight=height;
+		if(height>maxHeight)
+			maxHeight=height;
+		inorder(root->left,height++);
 		printf("%d ",root->value);
-		inorder(root->right);
+		inorder(root->right,height++);
 	}
 }
 #endif
