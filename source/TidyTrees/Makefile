@@ -2,21 +2,18 @@
 OBJS = main.c
 
 # CC specifies which compiler we're using
-CC = g++
-GL_INLCUDES =/Users/Shared/Imagination/PowerVR_Graphics/PowerVR_SDK/SDK_2016_R1.2/Builds/Include
+CC = gcc
 # INCLUDE_PATHS specifies the additional include paths we'll need
-INCLUDE_PATHS = -I/usr/local/include -I$(GL_INLCUDES)
+INCLUDE_PATHS = -I/usr/local/include
 
-# LIBRARY_PATHS specifies the additional library paths we'll need
-GL_LIBS=/Users/Shared/Imagination/PowerVR_Graphics/PowerVR_SDK/SDK_2016_R1.2/Builds/OSX/x86
-LIBRARY_PATHS = -L/usr/local/lib -I$(GL_LIBS)
+# LIBRARY_PATHS specifies the additional library paths we'll need and GL_LIBS specifies path for OpenGL Libraries
+LIBRARY_PATHS = -L/usr/local/lib
 
 # COMPILER_FLAGS specifies the additional compilation options we're using
 # -w suppresses all warnings
 COMPILER_FLAGS = -w
 
 # LINKER_FLAGS specifies the libraries we're linking against
-# Cocoa, IOKit, and CoreVideo are needed for static GLFW3.
 LINKER_FLAGS = -framework OpenGL -framework GLUT -lglfw3 -lglew -lSOIL
 
 # OBJ_NAME specifies the name of our exectuable
