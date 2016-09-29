@@ -3,6 +3,8 @@
 
 int main(){
 	node *root=createTree();
-	generateWetherellShannon(root,maxHeight);
+	enum AlgorithmType secondPass=NORMAL;
+	generateWetherellShannon(root,maxHeight,secondPass);
+	inorderPrint(root);
 	return 0;
 }

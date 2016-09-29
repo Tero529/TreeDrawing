@@ -11,14 +11,15 @@ int maxHeight=0;
 node *createNode(int InputValue,node *parent);
 node *createTree(void);
 node *treeHelper(int inputValues[],int n);
-void inorder(node *root,int height);
+void inorderPrint(node *root);
+void setHeight(node *root,int height);
 
 
 struct nodet{
 	int value;
 	node *left,*right,*father;
 	int xPos,yPos;
-	enum s{FIRST_VISIT , LEFT_VISIT , RIGHT_VISIT } status;
+	enum nodeStatus{FIRST_VISIT , LEFT_VISIT , RIGHT_VISIT } status;
 	int modifier;
 	int nodeheight;
 };
@@ -38,14 +39,17 @@ node *createNode(int InputValue,node *parent){
 node *createTree(void){
 		int n;
 		printf("How many values? ");
-		scanf("%d",&n);
-		int inputValues[n];
+		//scanf("%d",&n);
+		n=11;
+		int inputValues[]={7,4,12,2,6,9,15,1,3,8,25};
 		int counter=0;
-		for(counter=0;counter<n;counter++)
+		/*for(counter=0;counter<n;counter++)
 			scanf("%d",&inputValues[counter]);
+			*/
 		node *root=treeHelper(inputValues,n);
 		printf("Tree created is (inorder representation)\n");
-		inorder(root,0);
+		inorderPrint(root);
+		setHeight(root,0);
 		printf("\n");
 		return root;
 }
@@ -79,14 +83,22 @@ node *treeHelper(int inputValues[],int n){
 	return root;
 }
 
-void inorder(node *root,int height){
+void inorderPrint(node *root){
+
+	if(root!=NULL){
+		inorderPrint(root->left);
+		printf("Mode Value  %d at (%d,%d)\n",root->value,root->xPos,root->yPos);
+		inorderPrint(root->right);
+	}
+}
+
+void setHeight(node *root,int height){
 	if(root!=NULL){
 		root->nodeheight=height;
 		if(height>maxHeight)
 			maxHeight=height;
-		inorder(root->left,height++);
-		printf("%d ",root->value);
-		inorder(root->right,height++);
+		setHeight(root->left,height+1);
+		setHeight(root->right,height+1);
 	}
 }
 #endif
