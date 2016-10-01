@@ -3,17 +3,20 @@
 #include<stdio.h>
 #include<GLUT/glut.h>
 #include<math.h>
-enum SlopeValue { NEGATIVE,POSITIVE} slope;
-
+#include"main.c"
 
 void BresenhamLine(int x0,int y0,int x1,int y1);
 void MidPointCircle(int xc,int yc,int radius);
 void CirclePoints(int xc,int yc,int x,int y);
 void PutPixel(int x,int y);
 int sign(int x);
-
+void fill(int x,int y,int xc,int yc, int radius);
+char visited[50][50];
 
 void BresenhamLine(int x0,int y0,int x1,int y1){
+    glColor3f(0.0,0.0,0.0);
+
+
     printf("from (%d,%d) to (%d,%d)\n",x0,y0,x1,y1);
     int i;
     int x=x0;
@@ -51,6 +54,8 @@ void BresenhamLine(int x0,int y0,int x1,int y1){
 
 void MidPointCircle(int xc,int yc,int radius){
     printf("%d %d %d \n",xc,yc,radius);
+    glColor3f(1.0,0.0,0.0);
+    memset(visited,0,2500);
 
     int x=0;
     int y=radius;
@@ -76,6 +81,7 @@ void MidPointCircle(int xc,int yc,int radius){
         x++;
         CirclePoints(xc,yc,x,y);
     }
+    fill(xc,yc,xc,yc,radius);
 }
 
 
@@ -97,6 +103,26 @@ void PutPixel(int x, int y){
     glEnd();
     glFlush();
 }
+
+void fill(int x,int y,int xc,int yc,int radius){
+    int dec=(x-xc)*(x-xc) +(y-yc)*(y-yc);
+    
+    if(dec < (radius*radius) && visited[radius+(x-xc)][radius+(y-yc)]==0){
+        PutPixel(x,y);
+        visited[radius+(x-xc)][radius+(y-yc)]=1;
+        fill(x,y,xc,yc,radius);
+        fill(x,y,xc,yc,radius);
+        
+        fill(x+1,y+1,xc,yc,radius);
+        fill(x+1,y,xc,yc,radius);
+        fill(x+1,y-1,xc,yc,radius);
+        
+        fill(x-1,y+1,xc,yc,radius);
+        fill(x-1,y,xc,yc,radius);
+        fill(x-1,y-1,xc,yc,radius);
+    }
+}
+
 int sign(int x){
     if(x>0)
         return 1;

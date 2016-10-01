@@ -22,7 +22,7 @@ int main(int argc,char **argv){
      y values for each node */
 
     root=createTree();
-    enum AlgorithmType secondPass=NORMAL;
+    enum AlgorithmType secondPass=MODIFIED;
     generateWetherellShannon(root,maxHeight,secondPass);
     inorderPrint(root);
     WIDTH=(maxX-minX) * 100 +400;
@@ -51,8 +51,6 @@ void render(void){
         
         switch(current->status){
             case FIRST_VISIT:
-                MidPointCircle(xCoord(current),yCoord(current,HEIGHT), 25);
-                
                 current->status=LEFT_VISIT;
                 if(current->left !=NULL){
                     BresenhamLine(xCoord(current->left),yCoord(current->left,HEIGHT),xCoord(current),yCoord(current,HEIGHT));
@@ -71,6 +69,7 @@ void render(void){
                 break;
                 
             case RIGHT_VISIT:
+                MidPointCircle(xCoord(current),yCoord(current,HEIGHT), 25);
                 current=current->father;
                 break;
         }
@@ -80,7 +79,7 @@ void render(void){
 }
 
 void Init(){
-    glClearColor(1.0,1.0,1.0,0);
+    glClearColor(0.2,0.2,0.2,0);
     glColor3f(0.0,0.0,0.0);
     glMatrixMode(GL_PROJECTION);
     gluOrtho2D(0,WIDTH,0,HEIGHT);
