@@ -1,64 +1,89 @@
+#ifndef DRAWFUNCTIONS_H
+#define DRAWFUNCTIONS_H
 #include "binaryTree.h"
 #include "WetherellShannon.c"
+#include "drawFunctions.c"
+#include<GLUT/glut.h>
 
-//GLEW
-#define GLEW_STATIC
-#include <GL/glew.h>
+#define POSTIVE 1
+#define NEGATIVE 0
 
-
-// GLFW
-#include <GLFW/glfw3.h>
-
-
+void Init();
+void render(void);
+node *root;
 //Window dimensions
-int WIDTH=800,HEIGHT=600;
+int WIDTH=1000,HEIGHT=1000;
+#define LEFT_OFFSET 250
 
-int main(){
+int main(int argc,char **argv){
 
-	/*Create tree to be drawn and run it through the
-		WetherellShannon Algorithm to generate the x and
-		y values for each node */
+    /*Create tree to be drawn and run it through the
+     WetherellShannon Algorithm to generate the x and
+     y values for each node */
 
-	node *root=createTree();
-	enum AlgorithmType secondPass=NORMAL;
-	generateWetherellShannon(root,maxHeight,secondPass);
-	inorderPrint(root);
+    root=createTree();
+    enum AlgorithmType secondPass=NORMAL;
+    generateWetherellShannon(root,maxHeight,secondPass);
+    inorderPrint(root);
+    WIDTH=(maxX-minX) * 100 +400;
+    glutInit(&argc,argv);
 
-	glfwInit();
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-  glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-  glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
+    glutInitWindowPosition(0,0);
+    glutInitWindowSize(WIDTH,HEIGHT);
+    glutCreateWindow("Wetherell Shannon Tree Drawing");
 
-	//Create the Window object
-	GLFWwindow* window = glfwCreateWindow(WIDTH,HEIGHT,"Wetherell Shannon Tree Drawing",NULL,NULL);
-	if(window == NULL){
-		printf("Window Creation has failed\n");
-		glfwTerminate();
-		return -1;
-	}
-	glfwMakeContextCurrent(window);
+    Init();
 
-  //GLEW is used to manage the function pointers to OpenGL
-	glewExperimental= GL_TRUE;
-	if(glewInit() != GLEW_OK){
-		printf("GLEW Initialization has failed\n");
-		glfwTerminate();
-		return -1;
-	}
+    glutDisplayFunc(render);
+    glutMainLoop();
 
-	/*Set the viewPort size to display data and coordinates
-		with respect to the window
-		In effect (-1,-1) is mapped to (0,WIDTH) and (0,HEIGHT)*/
-	int width, height;
-	glfwGetFramebufferSize(window,&width,&height);
-	glViewport(0,0,width,height);
-
-	while (!glfwWindowShouldClose(window)){
-		glfwPollEvents();
-		glfwSwapBuffers(window);
-	}
-	glfwTerminate();
-	return 0;
+    return 0;
 }
+
+void render(void){
+    glClear(GL_COLOR_BUFFER_BIT);
+    node *current=root;
+    current->status=FIRST_VISIT;
+    int x0,y0,x1,y1;
+    double slope;
+    while(current != NULL){
+        
+        switch(current->status){
+            case FIRST_VISIT:
+                MidPointCircle(xCoord(current),yCoord(current,HEIGHT), 25);
+                
+                current->status=LEFT_VISIT;
+                if(current->left !=NULL){
+                    BresenhamLine(xCoord(current->left),yCoord(current->left,HEIGHT),xCoord(current),yCoord(current,HEIGHT));
+                    current=current->left;
+                    current->status=FIRST_VISIT;
+                }
+                break;
+                
+            case LEFT_VISIT:
+                current->status=RIGHT_VISIT;
+                if(current->right !=NULL){
+                    BresenhamLine(xCoord(current->right),yCoord(current->right,HEIGHT),xCoord(current),yCoord(current,HEIGHT));
+                    current=current->right;
+                    current->status=FIRST_VISIT;
+                }
+                break;
+                
+            case RIGHT_VISIT:
+                current=current->father;
+                break;
+        }
+        
+    }
+    
+}
+
+void Init(){
+    glClearColor(1.0,1.0,1.0,0);
+    glColor3f(0.0,0.0,0.0);
+    glMatrixMode(GL_PROJECTION);
+    gluOrtho2D(0,WIDTH,0,HEIGHT);
+}
+
+#endif

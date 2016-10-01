@@ -14,7 +14,7 @@ LIBRARY_PATHS = -L/usr/local/lib
 COMPILER_FLAGS = -w
 
 # LINKER_FLAGS specifies the libraries we're linking against
-LINKER_FLAGS = -framework OpenGL -framework GLUT -lglfw3 -lglew -lSOIL
+LINKER_FLAGS = -framework OpenGL -framework GLUT -lglfw3 -lglew -lSOIL -lm
 
 # OBJ_NAME specifies the name of our exectuable
 OBJ_NAME = Application

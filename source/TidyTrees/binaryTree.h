@@ -7,13 +7,16 @@
 
 typedef struct nodet node;
 int maxHeight=0;
+int minX=0;
+int maxX=0;
 
 node *createNode(int InputValue,node *parent);
 node *createTree(void);
 node *treeHelper(int inputValues[],int n);
 void inorderPrint(node *root);
 void setHeight(node *root,int height);
-
+int xCoord(node *NODE);
+int yCoord(node *NODE,int WindowHeight);
 
 struct nodet{
 	int value;
@@ -33,6 +36,8 @@ node *createNode(int InputValue,node *parent){
 	temp->father=parent;
 	temp->modifier=0;
 	temp->nodeheight=0;
+    temp->xPos=0;
+    temp->yPos=0;
 	return temp;
 }
 
@@ -86,8 +91,12 @@ node *treeHelper(int inputValues[],int n){
 void inorderPrint(node *root){
 
 	if(root!=NULL){
+        if(root->xPos < minX)
+            minX=root->xPos;
+        if(root->xPos > maxX)
+            maxX=root->xPos;
 		inorderPrint(root->left);
-		printf("Mode Value  %d at (%d,%d)\n",root->value,root->xPos,root->yPos);
+		printf("Node Value  %d at (%d,%d)\n",root->value,root->xPos,root->yPos);
 		inorderPrint(root->right);
 	}
 }
@@ -101,4 +110,12 @@ void setHeight(node *root,int height){
 		setHeight(root->right,height+1);
 	}
 }
+
+int xCoord(node *NODE){
+    return ( (NODE->xPos) * 100 -200*minX);
+}
+int yCoord(node *NODE,int WindowHeight){
+    return (WindowHeight-(NODE->yPos * 100) );
+}
+
 #endif
