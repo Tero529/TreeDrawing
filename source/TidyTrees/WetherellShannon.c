@@ -5,25 +5,26 @@
 #include<string.h>
 
 enum AlgorithmType {NORMAL,MODIFIED};
+int generateWetherellShannon(node *root,int treeHeight,enum AlgorithmType secondPass);
 
 int isleaf(node *NODE);
 int minimum(int a, int b);
 int maximum(int a, int b);
-int generateWetherellShannon(node *root,int treeHeight,enum AlgorithmType secondPass);
 void SecondPass(node *root);
-void SecondPassModified(node *root,int nextPos[]);
+void SecondPassModified(node *root,int maxHeight);
+
 
 int generateWetherellShannon(node *root,int treeHeight,enum AlgorithmType secondPass){
-  int modifier[treeHeight];
-	int nextPos[treeHeight];
-	int counter;
+  int modifier[treeHeight+1];
+    int nextPos[treeHeight+1];
+    int counter;
   int place;
   int height;
   int isLeaf=0;
   int modifierSum;
   node *current;
 
-  for(counter=0;counter<treeHeight;counter++){
+  for(counter=0;counter<=treeHeight;counter++){
     nextPos[counter]=1;
     modifier[counter]=0;
   }
@@ -60,7 +61,7 @@ int generateWetherellShannon(node *root,int treeHeight,enum AlgorithmType second
                       else if (current->right==NULL)
                         place=( (current->left)->xPos ) + 1;
                       else
-                        place=( (current->left)->xPos + (current->left)->xPos)/2;
+                        place=( (current->left)->xPos + (current->right)->xPos)/2;
 
                       modifier[height]=maximum(modifier[height],nextPos[height]-place);
 
@@ -79,13 +80,12 @@ int generateWetherellShannon(node *root,int treeHeight,enum AlgorithmType second
   if(secondPass==NORMAL)
     SecondPass(root);
   else
-    SecondPassModified(root,nextPos);
+    SecondPassModified(root,maxHeight);
   return 1;
 }
 
 void SecondPass(node *root){
 
-    printf("Moving on to second part\n");
     node *current=root;
     current->status=FIRST_VISIT;
     int modifierSum=0;
@@ -119,12 +119,17 @@ void SecondPass(node *root){
 
 }
 
-void SecondPassModified(node *root,int nextPos[]){
+void SecondPassModified(node *root,int maxHeight){
 
-  printf("Moving on to second part\n");
   node *current=root;
   current->status=FIRST_VISIT;
   int modifierSum=0;
+  int nextPos[maxHeight+1];
+
+  int counter=0;
+  for(counter=0;counter<=maxHeight;counter++)
+    nextPos[counter]=1;
+
   while(current !=NULL){
 
     switch(current->status){
@@ -139,6 +144,7 @@ void SecondPassModified(node *root,int nextPos[]){
       case LEFT_VISIT:
                       current->xPos=minimum(nextPos[current->nodeheight], current->xPos + modifierSum - current->modifier);
                       if(current->left !=NULL)
+
                         current->xPos=maximum(current->xPos,current->left->xPos + 1);
 
                       if(current->father!=NULL){
@@ -146,7 +152,7 @@ void SecondPassModified(node *root,int nextPos[]){
                           current->xPos=maximum(current->xPos,current->father->xPos +1);
                       }
 
-                      nextPos[current->nodeheight]=-current->xPos +2;
+                      nextPos[current->nodeheight]=current->xPos +2;
                       current->yPos=2*current->nodeheight + 1;
                       current->status=RIGHT_VISIT;
                       if(current->right!=NULL){
@@ -165,7 +171,8 @@ void SecondPassModified(node *root,int nextPos[]){
 }
 
 int isleaf(node *NODE){
-  return ((NODE->left == NULL) && (NODE->right == NULL));
+  if ((NODE->left == NULL) && (NODE->right == NULL))
+      return 1;
 }
 
 int maximum(int a,int b){

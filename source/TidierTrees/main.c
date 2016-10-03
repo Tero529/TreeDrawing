@@ -1,6 +1,6 @@
 
-#include "binaryTreeWS.h" //All Tree Making and Walk Related Functions
-#include "WetherellShannon.c" // Tree Drawing Algorithm which sets x and y positions with node structure
+#include "binaryTreeTR.h" //All Tree Making and Walk Related Functions
+#include "TilfordReingold.c" // Tree Drawing Algorithm which sets x and y positions with node structure
 #include "drawFunctions.c" // All Functions related to rendering to screen using OpenGL
 #include<GLUT/glut.h> // Support for OpenGL windowing and Callbacks
 
@@ -11,40 +11,28 @@ node *root;
 
 //Window dimensions (WIDTH IS calculated dynamically based on x values generated)
 int WIDTH,HEIGHT;
-
+node *root;
 
 
 int main(int argc,char **argv){
 
     /*Create tree to be drawn and run it through the
-     WetherellShannon Algorithm to generate the x and
+     TilfordReingold Algorithm to generate the x and
      y values for each node */
     root=createTree();
+    generateTilfordReingold(root);
+    preorder(root);
+    printf("%d %d\n",minX,maxX);
 
 
-    /*Set to MODIFIED to have algorithm make prettier trees without
-     conforming to width*/
-    enum AlgorithmType secondPass=MODIFIED;
-
-
-    /*Runs Tree Drawing Algorithm in "WetherellShannon.c" using the root of the
-    tree generated, the height of the tree and the type of aesthetic required */
-    generateWetherellShannon(root,maxHeight,secondPass);
-
-    // Print to terminal node values and the ascribed x and y values
-    inorderPrint(root);
-
-    /*WIDTH and HEIGHT given pixel values to draw window that *just fits*
-    the given tree*/
-    WIDTH=(maxX-minX+1)*100 ;
-    HEIGHT=2*(maxHeight+1)*50;
-    //WIDTH=1200;
-
+    WIDTH=(maxX-minX+2)*50 ;
+    HEIGHT=2*(maxHeight)*50;
+    
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
     glutInitWindowPosition(0,0);
     glutInitWindowSize(WIDTH,HEIGHT);
-    glutCreateWindow("Wetherell Shannon Tree Drawing");
+    glutCreateWindow("Tilford Reingold Tree Drawing");
 
     Init();
 
