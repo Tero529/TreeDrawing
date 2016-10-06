@@ -77,7 +77,7 @@ node *createTree(void){
 		/*for(counter=0;counter<n;counter++)
 			scanf("%d",&inputValues[counter]);
 			*/
-		node *root=treeHelper(inputValues,n);
+		node *root=treeHelper(inputValues,n);// Create Tree Using Input Values
 		printf("Tree created is (inorder representation)\n");
 		inorderPrint(root);
 
@@ -98,7 +98,8 @@ node *treeHelper(int inputValues[],int n){
 
 	for(counter=1;counter<n;counter++){
 		current=root;
-		while(1){
+        
+		while(1){ // Loop until proper position is found
 			if(inputValues[counter] <= current->value){
 				if(current->left==NULL){
 					current->left=createNode(inputValues[counter],current);
@@ -127,7 +128,7 @@ assign maxX and minX values */
 
 void inorderPrint(node *root){
 	if(root!=NULL){
-        if(root->xPos < minX)
+        if(root->xPos < minX) //Update minX and maxX ( to be used in WIDTH of window)
             minX=root->xPos;
         if(root->xPos > maxX)
             maxX=root->xPos;
