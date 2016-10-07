@@ -1,0 +1,203 @@
+\hypertarget{main_8c}{}\section{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/3\+N\+Ary\+Trees/main.c File Reference}
+\label{main_8c}\index{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/3\+N\+Ary\+Trees/main.\+c@{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/3\+N\+Ary\+Trees/main.\+c}}
+
+
+Extension to Accomodate N-\/ary Trees.  
+
+
+{\ttfamily \#include \char`\"{}n\+Ary.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}draw\+Functions.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$G\+L\+U\+T/glut.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8c_a0b403217ac688ceb78a0309661a42b17}{minsep}~2
+\begin{DoxyCompactList}\small\item\em Minimum Seperation of nodes on the same level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_a1e3b6d38df0786ccf7f938d60e386aae}{Init} ()
+\begin{DoxyCompactList}\small\item\em Initialise Draw Settings. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a6765cdcebe5c8445969d5f76345df457}{render} (void)
+\begin{DoxyCompactList}\small\item\em Function to render objects to screen. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a9fd955bd42c22cd4dd38db0c5f4125f1}{key\+Functions} (unsigned char key, int \hyperlink{main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int y)
+\begin{DoxyCompactList}\small\item\em Key Callback Functions. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a987e06e3b8cd76f1547637b79ee05b3c}{draw} (\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$t)
+\begin{DoxyCompactList}\small\item\em Recursive Preorder Drawing Walk. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a6beb81f6ca4a2e86f2d496aa66ac3440}{xcor\+Calculator} (\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$t, int a)
+\begin{DoxyCompactList}\small\item\em Shift by Modifiers. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8c_aae3ea47eaa12b5cf6b70f85c15a0e348}{next\+\_\+pos} \mbox{[}1000\mbox{]}
+\item 
+int \hyperlink{main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}
+\item 
+int \hyperlink{main_8c_afc8e9d08b0757397dea345211e930976}{avg\+\_\+pos}
+\item 
+int \hyperlink{main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}
+\item 
+\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ \hyperlink{main_8c_aa570215f2f913275d6ff0d586e436d21}{root}
+\begin{DoxyCompactList}\small\item\em Root of Tree to be drawn. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a59c3bba4b17cd5e19f149ea175fa6989}{W\+I\+D\+TH}
+\begin{DoxyCompactList}\small\item\em Window W\+I\+D\+TH, value genearted dynamically depending on node coordinates gotten. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a4e81322eb1085aca9cd7c5527f5e4c6b}{H\+E\+I\+G\+HT}
+\begin{DoxyCompactList}\small\item\em Window H\+E\+I\+G\+HT, value genearted dynamically depending on node coordinates gotten. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Extension to Accomodate N-\/ary Trees. 
+
+Through this code we have extended the algorithm by taking inspiration from the papers by Wetherell Shannon and tilford Reinfold for positioning nodes of a binary tree to accomodate an arbitrary number of children. As such it draws an n-\/ary tree using many of the same concepts as the aforementioned algorithms. \begin{DoxySeeAlso}{See also}
+\hyperlink{_wetherell_shannon_8h}{Wetherell\+Shannon.\+h} \hyperlink{_tilford_reingold_8h}{Tilford\+Reingold.\+h} binary\+Tree\+T\+F.\+h \hyperlink{binary_tree_w_s_8h}{binary\+Tree\+W\+S.\+h} 
+\end{DoxySeeAlso}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{main_8c_a0b403217ac688ceb78a0309661a42b17}{}\label{main_8c_a0b403217ac688ceb78a0309661a42b17} 
+\index{main.\+c@{main.\+c}!minsep@{minsep}}
+\index{minsep@{minsep}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{minsep}{minsep}}
+{\footnotesize\ttfamily \#define minsep~2}
+
+
+
+Minimum Seperation of nodes on the same level. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_a987e06e3b8cd76f1547637b79ee05b3c}{}\label{main_8c_a987e06e3b8cd76f1547637b79ee05b3c} 
+\index{main.\+c@{main.\+c}!draw@{draw}}
+\index{draw@{draw}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void draw (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{t }\end{DoxyParamCaption})}
+
+
+
+Recursive Preorder Drawing Walk. 
+
+Uses coordinates generated to Draw the given tree ~\newline
+ Walks along the tree in preorder and drawing each edge from node being traversed to its parent, before going to it\textquotesingle{}s sibling. Once all sibling\textquotesingle{}s edges are drawn, nodes are drawn in the reverse order, before moving on the parent. Does not draw the root node, which is drawn from \hyperlink{main_8c_a6765cdcebe5c8445969d5f76345df457}{render(void)};
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The current node being traversed (preorder) \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a1e3b6d38df0786ccf7f938d60e386aae}{}\label{main_8c_a1e3b6d38df0786ccf7f938d60e386aae} 
+\index{main.\+c@{main.\+c}!Init@{Init}}
+\index{Init@{Init}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialise Draw Settings. 
+
+Both Background and Drawing colour are set to Black The drawing mode is set to projection in orthographic mode with size equal to that of the window\hypertarget{main_8c_a9fd955bd42c22cd4dd38db0c5f4125f1}{}\label{main_8c_a9fd955bd42c22cd4dd38db0c5f4125f1} 
+\index{main.\+c@{main.\+c}!key\+Functions@{key\+Functions}}
+\index{key\+Functions@{key\+Functions}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{key\+Functions()}{keyFunctions()}}
+{\footnotesize\ttfamily void key\+Functions (\begin{DoxyParamCaption}\item[{unsigned char}]{key,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Key Callback Functions. 
+
+Function sets a key callback for the escape key, so that the application quits whenever the user pressed the escape key
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key pressed on the keyboard \\
+\hline
+{\em x} & X-\/coordinate of mouse when key is pressed \\
+\hline
+{\em y} & Y-\/coordinate of mouse when key is pressed \\
+\hline
+\end{DoxyParams}
+polls for event when pressed key==27 \hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\hypertarget{main_8c_a6765cdcebe5c8445969d5f76345df457}{}\label{main_8c_a6765cdcebe5c8445969d5f76345df457} 
+\index{main.\+c@{main.\+c}!render@{render}}
+\index{render@{render}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void render (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to render objects to screen. 
+
+\hypertarget{main_8c_a6beb81f6ca4a2e86f2d496aa66ac3440}{}\label{main_8c_a6beb81f6ca4a2e86f2d496aa66ac3440} 
+\index{main.\+c@{main.\+c}!xcor\+Calculator@{xcor\+Calculator}}
+\index{xcor\+Calculator@{xcor\+Calculator}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{xcor\+Calculator()}{xcorCalculator()}}
+{\footnotesize\ttfamily void xcor\+Calculator (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{t,  }\item[{int}]{a }\end{DoxyParamCaption})}
+
+
+
+Shift by Modifiers. 
+
+Shifts the X-\/\+Coordinates from the initial walk by the modifier values to arrive at actual/final x-\/coordinate values 
+
+\subsection{Variable Documentation}
+\hypertarget{main_8c_afc8e9d08b0757397dea345211e930976}{}\label{main_8c_afc8e9d08b0757397dea345211e930976} 
+\index{main.\+c@{main.\+c}!avg\+\_\+pos@{avg\+\_\+pos}}
+\index{avg\+\_\+pos@{avg\+\_\+pos}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{avg\+\_\+pos}{avg\_pos}}
+{\footnotesize\ttfamily int avg\+\_\+pos}
+
+\hypertarget{main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}{}\label{main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf} 
+\index{main.\+c@{main.\+c}!count@{count}}
+\index{count@{count}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily int count}
+
+\hypertarget{main_8c_a4e81322eb1085aca9cd7c5527f5e4c6b}{}\label{main_8c_a4e81322eb1085aca9cd7c5527f5e4c6b} 
+\index{main.\+c@{main.\+c}!H\+E\+I\+G\+HT@{H\+E\+I\+G\+HT}}
+\index{H\+E\+I\+G\+HT@{H\+E\+I\+G\+HT}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{H\+E\+I\+G\+HT}{HEIGHT}}
+{\footnotesize\ttfamily int H\+E\+I\+G\+HT}
+
+
+
+Window H\+E\+I\+G\+HT, value genearted dynamically depending on node coordinates gotten. 
+
+\hypertarget{main_8c_aae3ea47eaa12b5cf6b70f85c15a0e348}{}\label{main_8c_aae3ea47eaa12b5cf6b70f85c15a0e348} 
+\index{main.\+c@{main.\+c}!next\+\_\+pos@{next\+\_\+pos}}
+\index{next\+\_\+pos@{next\+\_\+pos}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{next\+\_\+pos}{next\_pos}}
+{\footnotesize\ttfamily int next\+\_\+pos\mbox{[}1000\mbox{]}}
+
+\hypertarget{main_8c_aa570215f2f913275d6ff0d586e436d21}{}\label{main_8c_aa570215f2f913275d6ff0d586e436d21} 
+\index{main.\+c@{main.\+c}!root@{root}}
+\index{root@{root}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node}$\ast$ root}
+
+
+
+Root of Tree to be drawn. 
+
+\hypertarget{main_8c_a59c3bba4b17cd5e19f149ea175fa6989}{}\label{main_8c_a59c3bba4b17cd5e19f149ea175fa6989} 
+\index{main.\+c@{main.\+c}!W\+I\+D\+TH@{W\+I\+D\+TH}}
+\index{W\+I\+D\+TH@{W\+I\+D\+TH}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{W\+I\+D\+TH}{WIDTH}}
+{\footnotesize\ttfamily int W\+I\+D\+TH}
+
+
+
+Window W\+I\+D\+TH, value genearted dynamically depending on node coordinates gotten. 
+
+\hypertarget{main_8c_a6150e0515f7202e2fb518f7206ed97dc}{}\label{main_8c_a6150e0515f7202e2fb518f7206ed97dc} 
+\index{main.\+c@{main.\+c}!x@{x}}
+\index{x@{x}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int x}
+

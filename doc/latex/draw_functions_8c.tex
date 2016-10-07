@@ -1,0 +1,87 @@
+\hypertarget{draw_functions_8c}{}\section{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/3\+N\+Ary\+Trees\+Wetherell\+Shannon/draw\+Functions.c File Reference}
+\label{draw_functions_8c}\index{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/3\+N\+Ary\+Trees\+Wetherell\+Shannon/draw\+Functions.\+c@{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/3\+N\+Ary\+Trees\+Wetherell\+Shannon/draw\+Functions.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$G\+L\+U\+T/glut.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{draw_functions_8c_af1dade658066a6ae7dbd306cbbd079c4}{D\+R\+A\+W\+F\+U\+N\+C\+T\+I\+O\+N\+S\+\_\+H}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{draw_functions_8c_a866917db95a5e43ad5890ee1b5d6c4a4}{Bresenham\+Line} (int x0, int y0, int x1, int y1)
+\item 
+void \hyperlink{draw_functions_8c_abdab1e53536e0363286d0bf58608b9da}{Mid\+Point\+Circle} (int xc, int yc, int radius)
+\item 
+void \hyperlink{draw_functions_8c_a8696daa7ac81677412591b465e65895c}{Circle\+Points} (int xc, int yc, int \hyperlink{main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int y)
+\item 
+void \hyperlink{draw_functions_8c_a5f1a8a0fdf12d319b00766d6d1a82964}{Put\+Pixel} (int \hyperlink{main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int y)
+\item 
+int \hyperlink{draw_functions_8c_a83da59ede262c2e8631f9180a4feba8a}{sign} (int \hyperlink{main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+void \hyperlink{draw_functions_8c_ac57ceaa27fa61046ca45b3fa41dd2b3a}{fill} (int \hyperlink{main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int y, int xc, int yc, int radius)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{draw_functions_8c_abf902d9bc07148e89c64879e585e97bf}{visited} \mbox{[}50\mbox{]}\mbox{[}50\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{draw_functions_8c_af1dade658066a6ae7dbd306cbbd079c4}{}\label{draw_functions_8c_af1dade658066a6ae7dbd306cbbd079c4} 
+\index{draw\+Functions.\+c@{draw\+Functions.\+c}!D\+R\+A\+W\+F\+U\+N\+C\+T\+I\+O\+N\+S\+\_\+H@{D\+R\+A\+W\+F\+U\+N\+C\+T\+I\+O\+N\+S\+\_\+H}}
+\index{D\+R\+A\+W\+F\+U\+N\+C\+T\+I\+O\+N\+S\+\_\+H@{D\+R\+A\+W\+F\+U\+N\+C\+T\+I\+O\+N\+S\+\_\+H}!draw\+Functions.\+c@{draw\+Functions.\+c}}
+\subsubsection{\texorpdfstring{D\+R\+A\+W\+F\+U\+N\+C\+T\+I\+O\+N\+S\+\_\+H}{DRAWFUNCTIONS\_H}}
+{\footnotesize\ttfamily \#define D\+R\+A\+W\+F\+U\+N\+C\+T\+I\+O\+N\+S\+\_\+H}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{draw_functions_8c_a866917db95a5e43ad5890ee1b5d6c4a4}{}\label{draw_functions_8c_a866917db95a5e43ad5890ee1b5d6c4a4} 
+\index{draw\+Functions.\+c@{draw\+Functions.\+c}!Bresenham\+Line@{Bresenham\+Line}}
+\index{Bresenham\+Line@{Bresenham\+Line}!draw\+Functions.\+c@{draw\+Functions.\+c}}
+\subsubsection{\texorpdfstring{Bresenham\+Line()}{BresenhamLine()}}
+{\footnotesize\ttfamily void Bresenham\+Line (\begin{DoxyParamCaption}\item[{int}]{x0,  }\item[{int}]{y0,  }\item[{int}]{x1,  }\item[{int}]{y1 }\end{DoxyParamCaption})}
+
+\hypertarget{draw_functions_8c_a8696daa7ac81677412591b465e65895c}{}\label{draw_functions_8c_a8696daa7ac81677412591b465e65895c} 
+\index{draw\+Functions.\+c@{draw\+Functions.\+c}!Circle\+Points@{Circle\+Points}}
+\index{Circle\+Points@{Circle\+Points}!draw\+Functions.\+c@{draw\+Functions.\+c}}
+\subsubsection{\texorpdfstring{Circle\+Points()}{CirclePoints()}}
+{\footnotesize\ttfamily void Circle\+Points (\begin{DoxyParamCaption}\item[{int}]{xc,  }\item[{int}]{yc,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\hypertarget{draw_functions_8c_ac57ceaa27fa61046ca45b3fa41dd2b3a}{}\label{draw_functions_8c_ac57ceaa27fa61046ca45b3fa41dd2b3a} 
+\index{draw\+Functions.\+c@{draw\+Functions.\+c}!fill@{fill}}
+\index{fill@{fill}!draw\+Functions.\+c@{draw\+Functions.\+c}}
+\subsubsection{\texorpdfstring{fill()}{fill()}}
+{\footnotesize\ttfamily void fill (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{xc,  }\item[{int}]{yc,  }\item[{int}]{radius }\end{DoxyParamCaption})}
+
+\hypertarget{draw_functions_8c_abdab1e53536e0363286d0bf58608b9da}{}\label{draw_functions_8c_abdab1e53536e0363286d0bf58608b9da} 
+\index{draw\+Functions.\+c@{draw\+Functions.\+c}!Mid\+Point\+Circle@{Mid\+Point\+Circle}}
+\index{Mid\+Point\+Circle@{Mid\+Point\+Circle}!draw\+Functions.\+c@{draw\+Functions.\+c}}
+\subsubsection{\texorpdfstring{Mid\+Point\+Circle()}{MidPointCircle()}}
+{\footnotesize\ttfamily void Mid\+Point\+Circle (\begin{DoxyParamCaption}\item[{int}]{xc,  }\item[{int}]{yc,  }\item[{int}]{radius }\end{DoxyParamCaption})}
+
+\hypertarget{draw_functions_8c_a5f1a8a0fdf12d319b00766d6d1a82964}{}\label{draw_functions_8c_a5f1a8a0fdf12d319b00766d6d1a82964} 
+\index{draw\+Functions.\+c@{draw\+Functions.\+c}!Put\+Pixel@{Put\+Pixel}}
+\index{Put\+Pixel@{Put\+Pixel}!draw\+Functions.\+c@{draw\+Functions.\+c}}
+\subsubsection{\texorpdfstring{Put\+Pixel()}{PutPixel()}}
+{\footnotesize\ttfamily void Put\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\hypertarget{draw_functions_8c_a83da59ede262c2e8631f9180a4feba8a}{}\label{draw_functions_8c_a83da59ede262c2e8631f9180a4feba8a} 
+\index{draw\+Functions.\+c@{draw\+Functions.\+c}!sign@{sign}}
+\index{sign@{sign}!draw\+Functions.\+c@{draw\+Functions.\+c}}
+\subsubsection{\texorpdfstring{sign()}{sign()}}
+{\footnotesize\ttfamily int sign (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{draw_functions_8c_abf902d9bc07148e89c64879e585e97bf}{}\label{draw_functions_8c_abf902d9bc07148e89c64879e585e97bf} 
+\index{draw\+Functions.\+c@{draw\+Functions.\+c}!visited@{visited}}
+\index{visited@{visited}!draw\+Functions.\+c@{draw\+Functions.\+c}}
+\subsubsection{\texorpdfstring{visited}{visited}}
+{\footnotesize\ttfamily char visited\mbox{[}50\mbox{]}\mbox{[}50\mbox{]}}
+

@@ -1,0 +1,84 @@
+\hypertarget{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h}{}\section{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/3\+N\+Ary\+Trees\+Wetherell\+Shannon/\+W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+RY.h File Reference}
+\label{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h}\index{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/3\+N\+Ary\+Trees\+Wetherell\+Shannon/\+W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h@{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/3\+N\+Ary\+Trees\+Wetherell\+Shannon/\+W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h}}
+
+
+Extension of Wetherell Shannon to Accomodate N-\/ary Trees.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}draw\+Functions.\+c\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structnode_ext}{node\+Ext}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ \hyperlink{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_ad6fe1056be72df9b35c295bf9609d3a6}{create} ()
+\item 
+void \hyperlink{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_a4e1c43dbdbb428ab5b416f8a7674a1f7}{preorder} (\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$t)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+typdef struct \hyperlink{structnode_ext}{node\+Ext} \hyperlink{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_a49df6a652ccc8095664900146381c82c}{node}
+\item 
+int \hyperlink{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_a89c440999057ffb8b33b40958fb6f662}{minX} =200
+\item 
+int \hyperlink{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_af601b4da58f07b53cf6cf36ad5b8cd50}{maxX} =0
+\item 
+int \hyperlink{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_ae853146681224745b378959c65ee98ce}{maxY} =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Extension of Wetherell Shannon to Accomodate N-\/ary Trees. 
+
+Through this file we have extended the algorithm put forth in the paper by Wetherell Shannon for positioning nodes of a binary tree to accomodate an arbtriry number of children. As such it draws an n-\/ary tree using many of the same concepts as the Wetherell Shannon Algorithm \begin{DoxySeeAlso}{See also}
+\hyperlink{_wetherell_shannon_8h}{Wetherell\+Shannon.\+h} 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\hypertarget{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_ad6fe1056be72df9b35c295bf9609d3a6}{}\label{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_ad6fe1056be72df9b35c295bf9609d3a6} 
+\index{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h@{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h}!create@{create}}
+\index{create@{create}!W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h@{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node}$\ast$ create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_a4e1c43dbdbb428ab5b416f8a7674a1f7}{}\label{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_a4e1c43dbdbb428ab5b416f8a7674a1f7} 
+\index{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h@{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h}!preorder@{preorder}}
+\index{preorder@{preorder}!W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h@{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h}}
+\subsubsection{\texorpdfstring{preorder()}{preorder()}}
+{\footnotesize\ttfamily void preorder (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{t }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_af601b4da58f07b53cf6cf36ad5b8cd50}{}\label{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_af601b4da58f07b53cf6cf36ad5b8cd50} 
+\index{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h@{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h}!maxX@{maxX}}
+\index{maxX@{maxX}!W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h@{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h}}
+\subsubsection{\texorpdfstring{maxX}{maxX}}
+{\footnotesize\ttfamily int maxX =0}
+
+\hypertarget{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_ae853146681224745b378959c65ee98ce}{}\label{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_ae853146681224745b378959c65ee98ce} 
+\index{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h@{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h}!maxY@{maxY}}
+\index{maxY@{maxY}!W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h@{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h}}
+\subsubsection{\texorpdfstring{maxY}{maxY}}
+{\footnotesize\ttfamily int maxY =0}
+
+\hypertarget{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_a89c440999057ffb8b33b40958fb6f662}{}\label{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_a89c440999057ffb8b33b40958fb6f662} 
+\index{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h@{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h}!minX@{minX}}
+\index{minX@{minX}!W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h@{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h}}
+\subsubsection{\texorpdfstring{minX}{minX}}
+{\footnotesize\ttfamily int minX =200}
+
+\hypertarget{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_a49df6a652ccc8095664900146381c82c}{}\label{_w_e_t_h_e_r_e_l_l_s_h_a_n_n_o_n___n___a_r_y_8h_a49df6a652ccc8095664900146381c82c} 
+\index{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h@{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h}!node@{node}}
+\index{node@{node}!W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h@{W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h}}
+\subsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily typdef struct \hyperlink{structnode_ext}{node\+Ext} \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node}}
+

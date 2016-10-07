@@ -1,0 +1,142 @@
+\hypertarget{tidy__drawings_01___n__ary_2main_8c}{}\section{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.c File Reference}
+\label{tidy__drawings_01___n__ary_2main_8c}\index{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+{\ttfamily \#include \char`\"{}W\+E\+T\+H\+E\+R\+E\+L\+L\+S\+H\+A\+N\+N\+O\+N\+\_\+\+N\+\_\+\+A\+R\+Y.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$G\+L\+U\+T/glut.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tidy__drawings_01___n__ary_2main_8c_a0b403217ac688ceb78a0309661a42b17}{minsep}~4
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{tidy__drawings_01___n__ary_2main_8c_a6beb81f6ca4a2e86f2d496aa66ac3440}{xcor\+Calculator} (\hyperlink{binary_tree_t_r_8h_af1ca97630a6a9a66aa170b4e2c09e94a}{node} $\ast$t, int a)
+\item 
+void \hyperlink{tidy__drawings_01___n__ary_2main_8c_a1e3b6d38df0786ccf7f938d60e386aae}{Init} ()
+\item 
+void \hyperlink{tidy__drawings_01___n__ary_2main_8c_a6765cdcebe5c8445969d5f76345df457}{render} (void)
+\item 
+void \hyperlink{tidy__drawings_01___n__ary_2main_8c_a9fd955bd42c22cd4dd38db0c5f4125f1}{key\+Functions} (unsigned char key, int \hyperlink{tidy__drawings_01___n__ary_2main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int y)
+\item 
+int \hyperlink{tidy__drawings_01___n__ary_2main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{tidy__drawings_01___n__ary_2main_8c_ab5ace9a45f7a1449c81c6376db1352e4}{x\+Coord} (\hyperlink{binary_tree_t_r_8h_af1ca97630a6a9a66aa170b4e2c09e94a}{node} $\ast$N\+O\+DE, int \hyperlink{binary_tree_w_s_8h_a89c440999057ffb8b33b40958fb6f662}{minX})
+\item 
+int \hyperlink{tidy__drawings_01___n__ary_2main_8c_a014dc700057f2fddb2b891d1d9bb0c41}{y\+Coord} (\hyperlink{binary_tree_t_r_8h_af1ca97630a6a9a66aa170b4e2c09e94a}{node} $\ast$N\+O\+DE, int Window\+Height)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{tidy__drawings_01___n__ary_2main_8c_aae3ea47eaa12b5cf6b70f85c15a0e348}{next\+\_\+pos} \mbox{[}1000\mbox{]}
+\item 
+int \hyperlink{tidy__drawings_01___n__ary_2main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}
+\item 
+int \hyperlink{tidy__drawings_01___n__ary_2main_8c_afc8e9d08b0757397dea345211e930976}{avg\+\_\+pos}
+\item 
+int \hyperlink{tidy__drawings_01___n__ary_2main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}
+\item 
+int \hyperlink{tidy__drawings_01___n__ary_2main_8c_a59c3bba4b17cd5e19f149ea175fa6989}{W\+I\+D\+TH}
+\item 
+int \hyperlink{tidy__drawings_01___n__ary_2main_8c_a4e81322eb1085aca9cd7c5527f5e4c6b}{H\+E\+I\+G\+HT}
+\item 
+\hyperlink{binary_tree_t_r_8h_af1ca97630a6a9a66aa170b4e2c09e94a}{node} $\ast$ \hyperlink{tidy__drawings_01___n__ary_2main_8c_aa570215f2f913275d6ff0d586e436d21}{root}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_a0b403217ac688ceb78a0309661a42b17}{}\label{tidy__drawings_01___n__ary_2main_8c_a0b403217ac688ceb78a0309661a42b17} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!minsep@{minsep}}
+\index{minsep@{minsep}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{minsep}{minsep}}
+{\footnotesize\ttfamily \#define minsep~4}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_a1e3b6d38df0786ccf7f938d60e386aae}{}\label{tidy__drawings_01___n__ary_2main_8c_a1e3b6d38df0786ccf7f938d60e386aae} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!Init@{Init}}
+\index{Init@{Init}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_a9fd955bd42c22cd4dd38db0c5f4125f1}{}\label{tidy__drawings_01___n__ary_2main_8c_a9fd955bd42c22cd4dd38db0c5f4125f1} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!key\+Functions@{key\+Functions}}
+\index{key\+Functions@{key\+Functions}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{key\+Functions()}{keyFunctions()}}
+{\footnotesize\ttfamily void key\+Functions (\begin{DoxyParamCaption}\item[{unsigned char}]{key,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{tidy__drawings_01___n__ary_2main_8c_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!main@{main}}
+\index{main@{main}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_a6765cdcebe5c8445969d5f76345df457}{}\label{tidy__drawings_01___n__ary_2main_8c_a6765cdcebe5c8445969d5f76345df457} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!render@{render}}
+\index{render@{render}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void render (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_ab5ace9a45f7a1449c81c6376db1352e4}{}\label{tidy__drawings_01___n__ary_2main_8c_ab5ace9a45f7a1449c81c6376db1352e4} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!x\+Coord@{x\+Coord}}
+\index{x\+Coord@{x\+Coord}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{x\+Coord()}{xCoord()}}
+{\footnotesize\ttfamily int x\+Coord (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_t_r_8h_af1ca97630a6a9a66aa170b4e2c09e94a}{node} $\ast$}]{N\+O\+DE,  }\item[{int}]{minX }\end{DoxyParamCaption})}
+
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_a6beb81f6ca4a2e86f2d496aa66ac3440}{}\label{tidy__drawings_01___n__ary_2main_8c_a6beb81f6ca4a2e86f2d496aa66ac3440} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!xcor\+Calculator@{xcor\+Calculator}}
+\index{xcor\+Calculator@{xcor\+Calculator}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{xcor\+Calculator()}{xcorCalculator()}}
+{\footnotesize\ttfamily void xcor\+Calculator (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_t_r_8h_af1ca97630a6a9a66aa170b4e2c09e94a}{node} $\ast$}]{t,  }\item[{int}]{a }\end{DoxyParamCaption})}
+
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_a014dc700057f2fddb2b891d1d9bb0c41}{}\label{tidy__drawings_01___n__ary_2main_8c_a014dc700057f2fddb2b891d1d9bb0c41} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!y\+Coord@{y\+Coord}}
+\index{y\+Coord@{y\+Coord}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{y\+Coord()}{yCoord()}}
+{\footnotesize\ttfamily int y\+Coord (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_t_r_8h_af1ca97630a6a9a66aa170b4e2c09e94a}{node} $\ast$}]{N\+O\+DE,  }\item[{int}]{Window\+Height }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_afc8e9d08b0757397dea345211e930976}{}\label{tidy__drawings_01___n__ary_2main_8c_afc8e9d08b0757397dea345211e930976} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!avg\+\_\+pos@{avg\+\_\+pos}}
+\index{avg\+\_\+pos@{avg\+\_\+pos}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{avg\+\_\+pos}{avg\_pos}}
+{\footnotesize\ttfamily int avg\+\_\+pos}
+
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}{}\label{tidy__drawings_01___n__ary_2main_8c_ad43c3812e6d13e0518d9f8b8f463ffcf} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!count@{count}}
+\index{count@{count}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily int count}
+
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_a4e81322eb1085aca9cd7c5527f5e4c6b}{}\label{tidy__drawings_01___n__ary_2main_8c_a4e81322eb1085aca9cd7c5527f5e4c6b} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!H\+E\+I\+G\+HT@{H\+E\+I\+G\+HT}}
+\index{H\+E\+I\+G\+HT@{H\+E\+I\+G\+HT}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{H\+E\+I\+G\+HT}{HEIGHT}}
+{\footnotesize\ttfamily int H\+E\+I\+G\+HT}
+
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_aae3ea47eaa12b5cf6b70f85c15a0e348}{}\label{tidy__drawings_01___n__ary_2main_8c_aae3ea47eaa12b5cf6b70f85c15a0e348} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!next\+\_\+pos@{next\+\_\+pos}}
+\index{next\+\_\+pos@{next\+\_\+pos}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{next\+\_\+pos}{next\_pos}}
+{\footnotesize\ttfamily int next\+\_\+pos\mbox{[}1000\mbox{]}}
+
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_aa570215f2f913275d6ff0d586e436d21}{}\label{tidy__drawings_01___n__ary_2main_8c_aa570215f2f913275d6ff0d586e436d21} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!root@{root}}
+\index{root@{root}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \hyperlink{binary_tree_t_r_8h_af1ca97630a6a9a66aa170b4e2c09e94a}{node}$\ast$ root}
+
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_a59c3bba4b17cd5e19f149ea175fa6989}{}\label{tidy__drawings_01___n__ary_2main_8c_a59c3bba4b17cd5e19f149ea175fa6989} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!W\+I\+D\+TH@{W\+I\+D\+TH}}
+\index{W\+I\+D\+TH@{W\+I\+D\+TH}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{W\+I\+D\+TH}{WIDTH}}
+{\footnotesize\ttfamily int W\+I\+D\+TH}
+
+\hypertarget{tidy__drawings_01___n__ary_2main_8c_a6150e0515f7202e2fb518f7206ed97dc}{}\label{tidy__drawings_01___n__ary_2main_8c_a6150e0515f7202e2fb518f7206ed97dc} 
+\index{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}!x@{x}}
+\index{x@{x}!tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c@{tidy\+\_\+drawings \+\_\+\+N\+\_\+ary/main.\+c}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int x}
+

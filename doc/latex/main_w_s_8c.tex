@@ -1,0 +1,131 @@
+\hypertarget{main_w_s_8c}{}\section{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/1\+Wetherell\+Shannon/main\+WS.c File Reference}
+\label{main_w_s_8c}\index{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/1\+Wetherell\+Shannon/main\+W\+S.\+c@{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/1\+Wetherell\+Shannon/main\+W\+S.\+c}}
+
+
+Main Driver for Wethrerell Shannon Drawing.  
+
+
+{\ttfamily \#include \char`\"{}binary\+Tree\+W\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Wetherell\+Shannon.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}draw\+Functions\+W\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$G\+L\+U\+T/glut.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_w_s_8c_a1e3b6d38df0786ccf7f938d60e386aae}{Init} ()
+\begin{DoxyCompactList}\small\item\em Initialise Draw Settings. \end{DoxyCompactList}\item 
+void \hyperlink{main_w_s_8c_a6765cdcebe5c8445969d5f76345df457}{render} (void)
+\begin{DoxyCompactList}\small\item\em Function to render objects to screen. \end{DoxyCompactList}\item 
+void \hyperlink{main_w_s_8c_a9fd955bd42c22cd4dd38db0c5f4125f1}{key\+Functions} (unsigned char key, int \hyperlink{main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int y)
+\begin{DoxyCompactList}\small\item\em Key Callback Functions. \end{DoxyCompactList}\item 
+int \hyperlink{main_w_s_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Startpoint of Application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ \hyperlink{main_w_s_8c_aa570215f2f913275d6ff0d586e436d21}{root}
+\begin{DoxyCompactList}\small\item\em Root of Tree to be drawn. \end{DoxyCompactList}\item 
+int \hyperlink{main_w_s_8c_a59c3bba4b17cd5e19f149ea175fa6989}{W\+I\+D\+TH}
+\begin{DoxyCompactList}\small\item\em Window W\+I\+D\+TH, value genearted dynamically depending on node coordinates gotten. \end{DoxyCompactList}\item 
+int \hyperlink{main_w_s_8c_a4e81322eb1085aca9cd7c5527f5e4c6b}{H\+E\+I\+G\+HT}
+\begin{DoxyCompactList}\small\item\em Window H\+E\+I\+G\+HT, value genearted dynamically depending on node coordinates gotten. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main Driver for Wethrerell Shannon Drawing. 
+
+This file begins execution by creating a Binary Search Tree, and feeding it through the Wetherell Shannon Tree Placement Algorith before using the generated x and y values to draw a tree to screen using the Open\+GL A\+PI for drawing and G\+L\+UT for windowing 
+
+\subsection{Function Documentation}
+\hypertarget{main_w_s_8c_a1e3b6d38df0786ccf7f938d60e386aae}{}\label{main_w_s_8c_a1e3b6d38df0786ccf7f938d60e386aae} 
+\index{main\+W\+S.\+c@{main\+W\+S.\+c}!Init@{Init}}
+\index{Init@{Init}!main\+W\+S.\+c@{main\+W\+S.\+c}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialise Draw Settings. 
+
+Both Background and Drawing colour are set to Black The drawing mode is set to projection in orthographic mode with size equal to that of the window\hypertarget{main_w_s_8c_a9fd955bd42c22cd4dd38db0c5f4125f1}{}\label{main_w_s_8c_a9fd955bd42c22cd4dd38db0c5f4125f1} 
+\index{main\+W\+S.\+c@{main\+W\+S.\+c}!key\+Functions@{key\+Functions}}
+\index{key\+Functions@{key\+Functions}!main\+W\+S.\+c@{main\+W\+S.\+c}}
+\subsubsection{\texorpdfstring{key\+Functions()}{keyFunctions()}}
+{\footnotesize\ttfamily void key\+Functions (\begin{DoxyParamCaption}\item[{unsigned char}]{key,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Key Callback Functions. 
+
+Function sets a key callback for the escape key, so that the application quits whenever the user pressed the escape key
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key pressed on the keyboard \\
+\hline
+{\em x} & X-\/coordinate of mouse when key is pressed \\
+\hline
+{\em y} & Y-\/coordinate of mouse when key is pressed \\
+\hline
+\end{DoxyParams}
+polls for event when pressed key==27 \hypertarget{main_w_s_8c_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{main_w_s_8c_a3c04138a5bfe5d72780bb7e82a18e627} 
+\index{main\+W\+S.\+c@{main\+W\+S.\+c}!main@{main}}
+\index{main@{main}!main\+W\+S.\+c@{main\+W\+S.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Startpoint of Application. 
+
+First runs \hyperlink{binary_tree_w_s_8h_a26673d37c93421a354fb6bb44fab83eb}{create\+Tree()} to create tree to be drawn
+
+It then runs Tree Drawing Algorithm in \char`\"{}\+Wetherell\+Shannon.\+h\char`\"{} using the root of the tree generated, the height of the tree and the type of second pass required
+
+W\+I\+D\+TH and H\+E\+I\+G\+HT are given given pixel values so as to yield a window that {\itshape just fits} the given tree
+
+Uses G\+L\+UT to initiliaze window with the created W\+I\+D\+TH and H\+E\+I\+G\+HT and places window at top left of screen
+
+Then Initialise Drawing settings wiith \hyperlink{main_w_s_8c_a1e3b6d38df0786ccf7f938d60e386aae}{Init()} \hypertarget{main_w_s_8c_a6765cdcebe5c8445969d5f76345df457}{}\label{main_w_s_8c_a6765cdcebe5c8445969d5f76345df457} 
+\index{main\+W\+S.\+c@{main\+W\+S.\+c}!render@{render}}
+\index{render@{render}!main\+W\+S.\+c@{main\+W\+S.\+c}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void render (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to render objects to screen. 
+
+Performs an Inorder walk and drawing First all the edges (left edges then right edges) in white Then fill area within each node circle using \hyperlink{draw_functions_w_s_8h_ac57ceaa27fa61046ca45b3fa41dd2b3a}{fill()} in red and finally draws a boundary around it in white
+
+\subsection{Variable Documentation}
+\hypertarget{main_w_s_8c_a4e81322eb1085aca9cd7c5527f5e4c6b}{}\label{main_w_s_8c_a4e81322eb1085aca9cd7c5527f5e4c6b} 
+\index{main\+W\+S.\+c@{main\+W\+S.\+c}!H\+E\+I\+G\+HT@{H\+E\+I\+G\+HT}}
+\index{H\+E\+I\+G\+HT@{H\+E\+I\+G\+HT}!main\+W\+S.\+c@{main\+W\+S.\+c}}
+\subsubsection{\texorpdfstring{H\+E\+I\+G\+HT}{HEIGHT}}
+{\footnotesize\ttfamily int H\+E\+I\+G\+HT}
+
+
+
+Window H\+E\+I\+G\+HT, value genearted dynamically depending on node coordinates gotten. 
+
+\hypertarget{main_w_s_8c_aa570215f2f913275d6ff0d586e436d21}{}\label{main_w_s_8c_aa570215f2f913275d6ff0d586e436d21} 
+\index{main\+W\+S.\+c@{main\+W\+S.\+c}!root@{root}}
+\index{root@{root}!main\+W\+S.\+c@{main\+W\+S.\+c}}
+\subsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node}$\ast$ root}
+
+
+
+Root of Tree to be drawn. 
+
+\hypertarget{main_w_s_8c_a59c3bba4b17cd5e19f149ea175fa6989}{}\label{main_w_s_8c_a59c3bba4b17cd5e19f149ea175fa6989} 
+\index{main\+W\+S.\+c@{main\+W\+S.\+c}!W\+I\+D\+TH@{W\+I\+D\+TH}}
+\index{W\+I\+D\+TH@{W\+I\+D\+TH}!main\+W\+S.\+c@{main\+W\+S.\+c}}
+\subsubsection{\texorpdfstring{W\+I\+D\+TH}{WIDTH}}
+{\footnotesize\ttfamily int W\+I\+D\+TH}
+
+
+
+Window W\+I\+D\+TH, value genearted dynamically depending on node coordinates gotten. 
+

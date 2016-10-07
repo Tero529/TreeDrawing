@@ -1,0 +1,39 @@
+\hypertarget{index_Contributors}{}\section{Contributors}\label{index_Contributors}
+
+\begin{DoxyItemize}
+\item Varun Natu 2014\+A7\+P\+S841H
+\item Ayush Sharma 2014\+A7\+PS H
+\item Akanksha Pandey 2014\+A7\+P\+S151H 
+\end{DoxyItemize}\hypertarget{index_Implementations}{}\section{Implementations}\label{index_Implementations}
+\hypertarget{index_algo1}{}\subsection{Wetherell Shannon (\+W\+S)}\label{index_algo1}
+The algorithm specified by Wetherell and Shannon has been implemented, and the source code can be found in the directory \char`\"{}source/\+Wetherell\+Shannon\char`\"{} ~\newline
+ The Implementation has support for both variations of the algorithm mentioned in the paper i.\+e
+\begin{DoxyItemize}
+\item The N\+O\+R\+M\+AL implementation which centers parents over it\textquotesingle{}s children but is not minimum in width
+\item The M\+O\+D\+I\+F\+I\+ED implementation which provides minimum width but may produce \textquotesingle{}U\+G\+LY\textquotesingle{} trees due to the absence of centering ~\newline
+ The trees that have been generated (both on user input and otherwise) and used for WS binary search trees.~\newline
+\begin{DoxySeeAlso}{See also}
+\hyperlink{main_w_s_8c}{main\+W\+S.\+c} \hyperlink{_wetherell_shannon_8h}{Wetherell\+Shannon.\+h} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}\hypertarget{index_algo2}{}\subsection{Tilford Reingold (\+T\+R)}\label{index_algo2}
+The algorithm specified by Tilford and Reingold has been implemented and the source code can be found in the directory \char`\"{}source/\+Tilford\+Reingold\char`\"{}. again the tree type that has been used for this implementation of TR is the binary search tree. \begin{DoxySeeAlso}{See also}
+\hyperlink{main_t_r_8c}{main\+T\+R.\+c} \hyperlink{_tilford_reingold_8h}{Tilford\+Reingold.\+h} 
+\end{DoxySeeAlso}
+\hypertarget{index_algo3}{}\subsection{Extension to N-\/ary Trees}\label{index_algo3}
+Using the previous two papers as inspiration we have extended the main concept of the WS Algorithm to accomodate arbtrarily size trees. ~\newline
+ We use a modifed version of the tree node used in WS by adding sibling pointers. The algorithm performs two walks similar to WS. Before performing an addional pre order walk to draw the tree with the generated coordinates. \begin{DoxySeeAlso}{See also}
+\hyperlink{main_8c}{main.\+c} \hyperlink{n_ary_8h}{n\+Ary.\+h}
+\end{DoxySeeAlso}
+\hypertarget{index_extra_algos}{}\subsection{Drawing Algorithms}\label{index_extra_algos}
+We have used 3 fundamental algorithms to accomplish the rendering part of the project.
+\begin{DoxyEnumerate}
+\item {\bfseries  Generalised Bresenham\textquotesingle{}s Line Drawing }
+\item {\bfseries  Midpoint Circle Algorithm Using 8-\/\+Way symmetry }
+\item {\bfseries  Variation of 4-\/\+Neighbour Boundary Fill } ~\newline
+ Starting from circle\textquotesingle{}s center a 4 neighbour fill is applied while the point has not been visited and does not lie outside the circle\textquotesingle{}
+\end{DoxyEnumerate}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{draw_functions_8h}{draw\+Functions.\+h} 
+\end{DoxySeeAlso}

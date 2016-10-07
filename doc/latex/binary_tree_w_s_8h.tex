@@ -1,0 +1,200 @@
+\hypertarget{binary_tree_w_s_8h}{}\section{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/1\+Wetherell\+Shannon/binary\+Tree\+WS.h File Reference}
+\label{binary_tree_w_s_8h}\index{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/1\+Wetherell\+Shannon/binary\+Tree\+W\+S.\+h@{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/1\+Wetherell\+Shannon/binary\+Tree\+W\+S.\+h}}
+
+
+Tree Functions for Wetherell Shannon.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structnodet}{nodet}
+\begin{DoxyCompactList}\small\item\em The Wetherell Shannon Tree Node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structnodet}{nodet} \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ \hyperlink{binary_tree_w_s_8h_a398b4083edf9b31fba53f9fe34bb2d88}{create\+Node} (int Input\+Value, \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Node Allocation. \end{DoxyCompactList}\item 
+\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ \hyperlink{binary_tree_w_s_8h_a26673d37c93421a354fb6bb44fab83eb}{create\+Tree} (void)
+\begin{DoxyCompactList}\small\item\em Create Binary Tree to be drawn. \end{DoxyCompactList}\item 
+\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ \hyperlink{binary_tree_w_s_8h_aeb3ab2c3152eef04021fbab938b84823}{tree\+Helper} (int input\+Values\mbox{[}$\,$\mbox{]}, int n)
+\begin{DoxyCompactList}\small\item\em Helper for \hyperlink{binary_tree_w_s_8h_a26673d37c93421a354fb6bb44fab83eb}{create\+Tree()} \end{DoxyCompactList}\item 
+void \hyperlink{binary_tree_w_s_8h_af9db53bd7d39ce0e65ff57d25cd4804f}{inorder\+Print} (\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$\hyperlink{main_8c_aa570215f2f913275d6ff0d586e436d21}{root})
+\begin{DoxyCompactList}\small\item\em Inorder Walk and Helper Function. \end{DoxyCompactList}\item 
+void \hyperlink{binary_tree_w_s_8h_a92373b975ae346b11d18f917c15af5cf}{set\+Height} (\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$\hyperlink{main_8c_aa570215f2f913275d6ff0d586e436d21}{root}, int height)
+\begin{DoxyCompactList}\small\item\em Sets height field of each node. \end{DoxyCompactList}\item 
+int \hyperlink{binary_tree_w_s_8h_ab5ace9a45f7a1449c81c6376db1352e4}{x\+Coord} (\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$N\+O\+DE, int \hyperlink{n_ary_8h_a89c440999057ffb8b33b40958fb6f662}{minX})
+\begin{DoxyCompactList}\small\item\em Translates Wetherell Shannon Integral x-\/value into Window coordinate. \end{DoxyCompactList}\item 
+int \hyperlink{binary_tree_w_s_8h_a014dc700057f2fddb2b891d1d9bb0c41}{y\+Coord} (\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$N\+O\+DE, int Window\+Height)
+\begin{DoxyCompactList}\small\item\em Translates Wetherell Shannon Integral y-\/value into Window coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{binary_tree_w_s_8h_a6b5da86bc1dbe6625fe489986ad3520d}{max\+Height} =0
+\begin{DoxyCompactList}\small\item\em The maximum y-\/value amongst all nodes after the tree drawing algorithm is run. \end{DoxyCompactList}\item 
+int \hyperlink{binary_tree_w_s_8h_a89c440999057ffb8b33b40958fb6f662}{minX} =200
+\begin{DoxyCompactList}\small\item\em Minimum x -\/value of all nodes after finar positions are set , used to generate window W\+I\+D\+TH. \end{DoxyCompactList}\item 
+int \hyperlink{binary_tree_w_s_8h_af601b4da58f07b53cf6cf36ad5b8cd50}{maxX} =0
+\begin{DoxyCompactList}\small\item\em Maximum x -\/value of all nodes after finar positions are set , used to generate window W\+I\+D\+TH. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tree Functions for Wetherell Shannon. 
+
+Specifies functions to create a binary search tree from user input data or hard coded data (See source code for \hyperlink{binary_tree_w_s_8h_a26673d37c93421a354fb6bb44fab83eb}{create\+Tree()};) and sets all tree related fields to be used by the Wetherell Shannon Tree Drawing Algorithm, Also provides functions for translating integral Wetherell Shannon outputs to window coordinates for drawing. 
+
+\subsection{Typedef Documentation}
+\hypertarget{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{}\label{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de} 
+\index{binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}!node@{node}}
+\index{node@{node}!binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}}
+\subsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structnodet}{nodet} \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node}}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{binary_tree_w_s_8h_a398b4083edf9b31fba53f9fe34bb2d88}{}\label{binary_tree_w_s_8h_a398b4083edf9b31fba53f9fe34bb2d88} 
+\index{binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}!create\+Node@{create\+Node}}
+\index{create\+Node@{create\+Node}!binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}}
+\subsubsection{\texorpdfstring{create\+Node()}{createNode()}}
+{\footnotesize\ttfamily \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ create\+Node (\begin{DoxyParamCaption}\item[{int}]{Input\+Value,  }\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Node Allocation. 
+
+A function to allocate space for a fresh node, initilise its attributes and return the pointer to it \hypertarget{binary_tree_w_s_8h_a26673d37c93421a354fb6bb44fab83eb}{}\label{binary_tree_w_s_8h_a26673d37c93421a354fb6bb44fab83eb} 
+\index{binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}!create\+Tree@{create\+Tree}}
+\index{create\+Tree@{create\+Tree}!binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}}
+\subsubsection{\texorpdfstring{create\+Tree()}{createTree()}}
+{\footnotesize\ttfamily \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ create\+Tree (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Create Binary Tree to be drawn. 
+
+Creates a Binary Search Tree using the number of nodes and values of those nodes as specified within it \hypertarget{binary_tree_w_s_8h_af9db53bd7d39ce0e65ff57d25cd4804f}{}\label{binary_tree_w_s_8h_af9db53bd7d39ce0e65ff57d25cd4804f} 
+\index{binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}!inorder\+Print@{inorder\+Print}}
+\index{inorder\+Print@{inorder\+Print}!binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}}
+\subsubsection{\texorpdfstring{inorder\+Print()}{inorderPrint()}}
+{\footnotesize\ttfamily void inorder\+Print (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{root }\end{DoxyParamCaption})}
+
+
+
+Inorder Walk and Helper Function. 
+
+Prints the created tree in inorder representation and also assigns maxX , minX , and max\+Height
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & root of tree to be traversed \\
+\hline
+\end{DoxyParams}
+Also run once after tree drawing algorithms set x,y values to decide and assign maxX and minX values \hypertarget{binary_tree_w_s_8h_a92373b975ae346b11d18f917c15af5cf}{}\label{binary_tree_w_s_8h_a92373b975ae346b11d18f917c15af5cf} 
+\index{binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}!set\+Height@{set\+Height}}
+\index{set\+Height@{set\+Height}!binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}}
+\subsubsection{\texorpdfstring{set\+Height()}{setHeight()}}
+{\footnotesize\ttfamily void set\+Height (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{root,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Sets height field of each node. 
+
+Set nodeheight field of all nodes in tree with given root through a pre order walk
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & root of tree to be traversed \\
+\hline
+{\em height} & height of root (used to set node\+Height field for subsequent nodes) \\
+\hline
+\end{DoxyParams}
+Called before Tree Drawing Algorithm to set heights of individual nodes and save max\+Height (which is also tree height) \hypertarget{binary_tree_w_s_8h_aeb3ab2c3152eef04021fbab938b84823}{}\label{binary_tree_w_s_8h_aeb3ab2c3152eef04021fbab938b84823} 
+\index{binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}!tree\+Helper@{tree\+Helper}}
+\index{tree\+Helper@{tree\+Helper}!binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}}
+\subsubsection{\texorpdfstring{tree\+Helper()}{treeHelper()}}
+{\footnotesize\ttfamily \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ tree\+Helper (\begin{DoxyParamCaption}\item[{int}]{input\+Values\mbox{[}$\,$\mbox{]},  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Helper for \hyperlink{binary_tree_w_s_8h_a26673d37c93421a354fb6bb44fab83eb}{create\+Tree()} 
+
+Works from within the \hyperlink{binary_tree_w_s_8h_a26673d37c93421a354fb6bb44fab83eb}{create\+Tree()} function to find correct position for the next node and set related pointers \hypertarget{binary_tree_w_s_8h_ab5ace9a45f7a1449c81c6376db1352e4}{}\label{binary_tree_w_s_8h_ab5ace9a45f7a1449c81c6376db1352e4} 
+\index{binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}!x\+Coord@{x\+Coord}}
+\index{x\+Coord@{x\+Coord}!binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}}
+\subsubsection{\texorpdfstring{x\+Coord()}{xCoord()}}
+{\footnotesize\ttfamily int x\+Coord (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{N\+O\+DE,  }\item[{int}]{minX }\end{DoxyParamCaption})}
+
+
+
+Translates Wetherell Shannon Integral x-\/value into Window coordinate. 
+
+Each integral coordinate is scaled by 100 to be visible appropriately in the screen (screen is typically 800x600 or greater), and is off set on the left by 50 pixels (as node radius drawn is 25 pixels)
+
+
+\begin{DoxyParams}{Parameters}
+{\em N\+O\+DE} & Node whose x-\/coordinate is to be extracted \\
+\hline
+{\em minX} & minimumX value of entire tree \\
+\hline
+\end{DoxyParams}
+\hypertarget{binary_tree_w_s_8h_a014dc700057f2fddb2b891d1d9bb0c41}{}\label{binary_tree_w_s_8h_a014dc700057f2fddb2b891d1d9bb0c41} 
+\index{binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}!y\+Coord@{y\+Coord}}
+\index{y\+Coord@{y\+Coord}!binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}}
+\subsubsection{\texorpdfstring{y\+Coord()}{yCoord()}}
+{\footnotesize\ttfamily int y\+Coord (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{N\+O\+DE,  }\item[{int}]{Window\+Height }\end{DoxyParamCaption})}
+
+
+
+Translates Wetherell Shannon Integral y-\/value into Window coordinate. 
+
+Open GL (0,0) Refers to botom left corner while algorithm refers to the same as the top right corner, hence , node\textquotesingle{}s y value is subtracted from H\+E\+I\+G\+HT of window to set appropriate Open\+GL drawing point
+
+
+\begin{DoxyParams}{Parameters}
+{\em N\+O\+DE} & Node whose x-\/coordinate is to be extracted \\
+\hline
+{\em Window\+Height} & The height of created window \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{binary_tree_w_s_8h_a6b5da86bc1dbe6625fe489986ad3520d}{}\label{binary_tree_w_s_8h_a6b5da86bc1dbe6625fe489986ad3520d} 
+\index{binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}!max\+Height@{max\+Height}}
+\index{max\+Height@{max\+Height}!binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}}
+\subsubsection{\texorpdfstring{max\+Height}{maxHeight}}
+{\footnotesize\ttfamily int max\+Height =0}
+
+
+
+The maximum y-\/value amongst all nodes after the tree drawing algorithm is run. 
+
+\hypertarget{binary_tree_w_s_8h_af601b4da58f07b53cf6cf36ad5b8cd50}{}\label{binary_tree_w_s_8h_af601b4da58f07b53cf6cf36ad5b8cd50} 
+\index{binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}!maxX@{maxX}}
+\index{maxX@{maxX}!binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}}
+\subsubsection{\texorpdfstring{maxX}{maxX}}
+{\footnotesize\ttfamily int maxX =0}
+
+
+
+Maximum x -\/value of all nodes after finar positions are set , used to generate window W\+I\+D\+TH. 
+
+\hypertarget{binary_tree_w_s_8h_a89c440999057ffb8b33b40958fb6f662}{}\label{binary_tree_w_s_8h_a89c440999057ffb8b33b40958fb6f662} 
+\index{binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}!minX@{minX}}
+\index{minX@{minX}!binary\+Tree\+W\+S.\+h@{binary\+Tree\+W\+S.\+h}}
+\subsubsection{\texorpdfstring{minX}{minX}}
+{\footnotesize\ttfamily int minX =200}
+
+
+
+Minimum x -\/value of all nodes after finar positions are set , used to generate window W\+I\+D\+TH. 
+

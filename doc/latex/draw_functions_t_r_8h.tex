@@ -1,0 +1,178 @@
+\hypertarget{draw_functions_t_r_8h}{}\section{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/2\+Tilford\+Reingold/draw\+Functions\+TR.h File Reference}
+\label{draw_functions_t_r_8h}\index{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/2\+Tilford\+Reingold/draw\+Functions\+T\+R.\+h@{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/2\+Tilford\+Reingold/draw\+Functions\+T\+R.\+h}}
+
+
+Algorithms for Line, Circle Drawinng and Circle Fill.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$G\+L\+U\+T/glut.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{draw_functions_t_r_8h_a866917db95a5e43ad5890ee1b5d6c4a4}{Bresenham\+Line} (int x0, int y0, int x1, int y1)
+\begin{DoxyCompactList}\small\item\em Bresenham\textquotesingle{}s Midpoint Line Drawing. \end{DoxyCompactList}\item 
+void \hyperlink{draw_functions_t_r_8h_abdab1e53536e0363286d0bf58608b9da}{Mid\+Point\+Circle} (int xc, int yc, int radius)
+\begin{DoxyCompactList}\small\item\em Midpoint Circle Drawing. \end{DoxyCompactList}\item 
+void \hyperlink{draw_functions_t_r_8h_a8696daa7ac81677412591b465e65895c}{Circle\+Points} (int xc, int yc, int \hyperlink{main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int y)
+\begin{DoxyCompactList}\small\item\em Draws 8 Points on Circle. \end{DoxyCompactList}\item 
+void \hyperlink{draw_functions_t_r_8h_a5f1a8a0fdf12d319b00766d6d1a82964}{Put\+Pixel} (int \hyperlink{main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int y)
+\begin{DoxyCompactList}\small\item\em Puts a Pixel at (x,y) on the screen. \end{DoxyCompactList}\item 
+int \hyperlink{draw_functions_t_r_8h_a83da59ede262c2e8631f9180a4feba8a}{sign} (int \hyperlink{main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\begin{DoxyCompactList}\small\item\em Sign Determiner. \end{DoxyCompactList}\item 
+void \hyperlink{draw_functions_t_r_8h_ac57ceaa27fa61046ca45b3fa41dd2b3a}{fill} (int \hyperlink{main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int y, int xc, int yc, int radius)
+\begin{DoxyCompactList}\small\item\em 4-\/\+Neighbour Fill \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{draw_functions_t_r_8h_abf902d9bc07148e89c64879e585e97bf}{visited} \mbox{[}50\mbox{]}\mbox{[}50\mbox{]}
+\begin{DoxyCompactList}\small\item\em Visit Matrix Used for Filling Algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Algorithms for Line, Circle Drawinng and Circle Fill. 
+
+Header Guard to Prevent Redeclaration
+
+This file contains functions to translate coordinates and to drawn primitives on the screen using
+\begin{DoxyEnumerate}
+\item Open\+GL A\+PI for pixel drawing
+\item Generalised Bresenham\textquotesingle{}s Midpoint Algorithm for Line Drawing
+\item Midpoint Circle Algorithm
+\item 4 Neighbour Flood Fill, for filling circles 
+\end{DoxyEnumerate}
+
+\subsection{Function Documentation}
+\hypertarget{draw_functions_t_r_8h_a866917db95a5e43ad5890ee1b5d6c4a4}{}\label{draw_functions_t_r_8h_a866917db95a5e43ad5890ee1b5d6c4a4} 
+\index{draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}!Bresenham\+Line@{Bresenham\+Line}}
+\index{Bresenham\+Line@{Bresenham\+Line}!draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{Bresenham\+Line()}{BresenhamLine()}}
+{\footnotesize\ttfamily void Bresenham\+Line (\begin{DoxyParamCaption}\item[{int}]{x0,  }\item[{int}]{y0,  }\item[{int}]{x1,  }\item[{int}]{y1 }\end{DoxyParamCaption})}
+
+
+
+Bresenham\textquotesingle{}s Midpoint Line Drawing. 
+
+Uses a generalised version of Bresenham\textquotesingle{}s midpoint algorithm to draw a line from (x0,y0) to (x1,y1)
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & x-\/coordinate of point drawn from \\
+\hline
+{\em y0} & y-\/coordinate of point drawn from \\
+\hline
+{\em x1} & x-\/coordinate of point drawn to \\
+\hline
+{\em y1} & y-\/coordinate of point drawn to \\
+\hline
+\end{DoxyParams}
+To Support cases where $\vert$ Slope $\vert$ $>$ 1, values of dy and dx are swapped it dy $>$ dx and swap\+Flag is set to 1
+
+{\bfseries  decision } is the decision variable who\textquotesingle{}s sign decides which pixel to draw \hypertarget{draw_functions_t_r_8h_a8696daa7ac81677412591b465e65895c}{}\label{draw_functions_t_r_8h_a8696daa7ac81677412591b465e65895c} 
+\index{draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}!Circle\+Points@{Circle\+Points}}
+\index{Circle\+Points@{Circle\+Points}!draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{Circle\+Points()}{CirclePoints()}}
+{\footnotesize\ttfamily void Circle\+Points (\begin{DoxyParamCaption}\item[{int}]{xc,  }\item[{int}]{yc,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Draws 8 Points on Circle. 
+
+Utilises 8-\/way symmetery of a circle to translate one point generated from Midpoint Circle into 8. Midpoint Circle generates points such that center is at origin thus points must be added to center in the drawing algorithm
+
+
+\begin{DoxyParams}{Parameters}
+{\em xc,yc} & coordinates of circle center \\
+\hline
+{\em x,y} & coordinates of circle if centered at origin \\
+\hline
+\end{DoxyParams}
+\hypertarget{draw_functions_t_r_8h_ac57ceaa27fa61046ca45b3fa41dd2b3a}{}\label{draw_functions_t_r_8h_ac57ceaa27fa61046ca45b3fa41dd2b3a} 
+\index{draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}!fill@{fill}}
+\index{fill@{fill}!draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{fill()}{fill()}}
+{\footnotesize\ttfamily void fill (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{xc,  }\item[{int}]{yc,  }\item[{int}]{radius }\end{DoxyParamCaption})}
+
+
+
+4-\/\+Neighbour Fill 
+
+Uses a 4-\/neighbour approach to filling all points within circle of given centre and radius
+
+
+\begin{DoxyParams}{Parameters}
+{\em xc,yc} & coordinates of circle center \\
+\hline
+{\em radius} & Radius of circle to fill \\
+\hline
+\end{DoxyParams}
+Fill function draws the given pixel and calls its 4 neighbours (down,up,right,left) if it is inside the given circle and updates the visited matrix for its current point\hypertarget{draw_functions_t_r_8h_abdab1e53536e0363286d0bf58608b9da}{}\label{draw_functions_t_r_8h_abdab1e53536e0363286d0bf58608b9da} 
+\index{draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}!Mid\+Point\+Circle@{Mid\+Point\+Circle}}
+\index{Mid\+Point\+Circle@{Mid\+Point\+Circle}!draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{Mid\+Point\+Circle()}{MidPointCircle()}}
+{\footnotesize\ttfamily void Mid\+Point\+Circle (\begin{DoxyParamCaption}\item[{int}]{xc,  }\item[{int}]{yc,  }\item[{int}]{radius }\end{DoxyParamCaption})}
+
+
+
+Midpoint Circle Drawing. 
+
+Uses the midpoints algorithm and 8-\/way symmetry to draw a circle with given centre and radius. It a second circle with the same centre but an incremented radius to ensure thick boundarys
+
+
+\begin{DoxyParams}{Parameters}
+{\em xc} & x-\/coordinate of circle\textquotesingle{}s centre \\
+\hline
+{\em yc} & y-\/coordinate of circle\textquotesingle{}s centre \\
+\hline
+{\em radius} & Radius of the circle to be drawn \\
+\hline
+\end{DoxyParams}
+{\bfseries  d } is the decision variable (East pixel is chosen if negative, South East Otherwise
+
+{\bfseries  deltaE and delta\+SE } Second Order Differences \hypertarget{draw_functions_t_r_8h_a5f1a8a0fdf12d319b00766d6d1a82964}{}\label{draw_functions_t_r_8h_a5f1a8a0fdf12d319b00766d6d1a82964} 
+\index{draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}!Put\+Pixel@{Put\+Pixel}}
+\index{Put\+Pixel@{Put\+Pixel}!draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{Put\+Pixel()}{PutPixel()}}
+{\footnotesize\ttfamily void Put\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Puts a Pixel at (x,y) on the screen. 
+
+\hypertarget{draw_functions_t_r_8h_a83da59ede262c2e8631f9180a4feba8a}{}\label{draw_functions_t_r_8h_a83da59ede262c2e8631f9180a4feba8a} 
+\index{draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}!sign@{sign}}
+\index{sign@{sign}!draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{sign()}{sign()}}
+{\footnotesize\ttfamily int sign (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Sign Determiner. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Input Number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 is x is positive 
+
+-\/1 if x is negative 
+
+0 if x is zero 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\hypertarget{draw_functions_t_r_8h_abf902d9bc07148e89c64879e585e97bf}{}\label{draw_functions_t_r_8h_abf902d9bc07148e89c64879e585e97bf} 
+\index{draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}!visited@{visited}}
+\index{visited@{visited}!draw\+Functions\+T\+R.\+h@{draw\+Functions\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{visited}{visited}}
+{\footnotesize\ttfamily char visited\mbox{[}50\mbox{]}\mbox{[}50\mbox{]}}
+
+
+
+Visit Matrix Used for Filling Algorithm. 
+
+visit matrix which is memset to 0 before calling the fill algorithm. 

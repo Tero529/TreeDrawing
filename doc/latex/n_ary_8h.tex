@@ -1,0 +1,168 @@
+\hypertarget{n_ary_8h}{}\section{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/3\+N\+Ary\+Trees/n\+Ary.h File Reference}
+\label{n_ary_8h}\index{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/3\+N\+Ary\+Trees/n\+Ary.\+h@{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/3\+N\+Ary\+Trees/n\+Ary.\+h}}
+
+
+N-\/ary tree creation.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}draw\+Functions.\+h\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structnode_ext}{node\+Ext}
+\begin{DoxyCompactList}\small\item\em Our Node for the n-\/ary tree to be drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structnode_ext}{node\+Ext} \hyperlink{n_ary_8h_a0ed7e65242ea49536017d58946285e12}{node}
+\begin{DoxyCompactList}\small\item\em Our Node for the n-\/ary tree to be drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ \hyperlink{n_ary_8h_a13f4bbe8aef5d2c6e893cc199f12a737}{create} ()
+\begin{DoxyCompactList}\small\item\em N-\/\+Ary Tree Creator. \end{DoxyCompactList}\item 
+void \hyperlink{n_ary_8h_a4e1c43dbdbb428ab5b416f8a7674a1f7}{preorder} (\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$t)
+\begin{DoxyCompactList}\small\item\em Preorder Traversal of Tree. \end{DoxyCompactList}\item 
+int \hyperlink{n_ary_8h_ab5ace9a45f7a1449c81c6376db1352e4}{x\+Coord} (\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$N\+O\+DE, int \hyperlink{n_ary_8h_a89c440999057ffb8b33b40958fb6f662}{minX})
+\begin{DoxyCompactList}\small\item\em Translates Tilford Reingold Integral x-\/value into Window coordinate. \end{DoxyCompactList}\item 
+int \hyperlink{n_ary_8h_a014dc700057f2fddb2b891d1d9bb0c41}{y\+Coord} (\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$N\+O\+DE, int Window\+Height)
+\begin{DoxyCompactList}\small\item\em Translates Tilford Reingold Integral y-\/value into Window coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{n_ary_8h_ae853146681224745b378959c65ee98ce}{maxY} =0
+\begin{DoxyCompactList}\small\item\em The maximum y-\/value amongst all nodes after the tree drawing algorithm is run. \end{DoxyCompactList}\item 
+int \hyperlink{n_ary_8h_a89c440999057ffb8b33b40958fb6f662}{minX} =200
+\begin{DoxyCompactList}\small\item\em Minimum x -\/value of all nodes after finar positions are set , used to generate window W\+I\+D\+TH. \end{DoxyCompactList}\item 
+int \hyperlink{n_ary_8h_af601b4da58f07b53cf6cf36ad5b8cd50}{maxX} =0
+\begin{DoxyCompactList}\small\item\em Maximum x -\/value of all nodes after finar positions are set , used to generate window W\+I\+D\+TH. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+N-\/ary tree creation. 
+
+The file specifies functions used to create a user input n-\/ary tree which is input in preorder ~\newline
+ The n-\/ary tree node used has only one child pointer but also contains a sibling pointer, thus allowing for efficient traversals.  completely robust in terms of error handling on input. \begin{DoxySeeAlso}{See also}
+\hyperlink{_wetherell_shannon_8h}{Wetherell\+Shannon.\+h} \hyperlink{_tilford_reingold_8h}{Tilford\+Reingold.\+h} binary\+Tree\+T\+F.\+h \hyperlink{binary_tree_w_s_8h}{binary\+Tree\+W\+S.\+h} 
+\end{DoxySeeAlso}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{n_ary_8h_a0ed7e65242ea49536017d58946285e12}{}\label{n_ary_8h_a0ed7e65242ea49536017d58946285e12} 
+\index{n\+Ary.\+h@{n\+Ary.\+h}!node@{node}}
+\index{node@{node}!n\+Ary.\+h@{n\+Ary.\+h}}
+\subsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structnode_ext}{node\+Ext} \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node}}
+
+
+
+Our Node for the n-\/ary tree to be drawn. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{n_ary_8h_a13f4bbe8aef5d2c6e893cc199f12a737}{}\label{n_ary_8h_a13f4bbe8aef5d2c6e893cc199f12a737} 
+\index{n\+Ary.\+h@{n\+Ary.\+h}!create@{create}}
+\index{create@{create}!n\+Ary.\+h@{n\+Ary.\+h}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+N-\/\+Ary Tree Creator. 
+
+Prompts the user for number of today nodes in the tree and stores it to. Following which the n-\/1 edges are input in strictly preorder fashion. \begin{DoxyReturn}{Returns}
+The root of the created tree 
+\end{DoxyReturn}
+\hypertarget{n_ary_8h_a4e1c43dbdbb428ab5b416f8a7674a1f7}{}\label{n_ary_8h_a4e1c43dbdbb428ab5b416f8a7674a1f7} 
+\index{n\+Ary.\+h@{n\+Ary.\+h}!preorder@{preorder}}
+\index{preorder@{preorder}!n\+Ary.\+h@{n\+Ary.\+h}}
+\subsubsection{\texorpdfstring{preorder()}{preorder()}}
+{\footnotesize\ttfamily void preorder (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{t }\end{DoxyParamCaption})}
+
+
+
+Preorder Traversal of Tree. 
+
+Traverses the given tree in preorder by first moving along left countout and succesively traversing the node\textquotesingle{}s siblings to accomplish preorder before moving to a \char`\"{}righter\char`\"{} node ~\newline
+ Preorder function also updates the minX,maxX, and maxY values required for window W\+I\+D\+TH and H\+E\+I\+G\+HT creation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The current node being traversed \\
+\hline
+\end{DoxyParams}
+\hypertarget{n_ary_8h_ab5ace9a45f7a1449c81c6376db1352e4}{}\label{n_ary_8h_ab5ace9a45f7a1449c81c6376db1352e4} 
+\index{n\+Ary.\+h@{n\+Ary.\+h}!x\+Coord@{x\+Coord}}
+\index{x\+Coord@{x\+Coord}!n\+Ary.\+h@{n\+Ary.\+h}}
+\subsubsection{\texorpdfstring{x\+Coord()}{xCoord()}}
+{\footnotesize\ttfamily int x\+Coord (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{N\+O\+DE,  }\item[{int}]{minX }\end{DoxyParamCaption})}
+
+
+
+Translates Tilford Reingold Integral x-\/value into Window coordinate. 
+
+Each integral coordinate is scaled by 100 to be visible appropriately in the screen (screen is typically 800x600 or greater), and is off set on the left by 50 pixels (as node radius drawn is 25 pixels)
+
+
+\begin{DoxyParams}{Parameters}
+{\em N\+O\+DE} & Node whose x-\/coordinate is to be extracted \\
+\hline
+{\em minX} & minimumX value of entire tree \\
+\hline
+\end{DoxyParams}
+\hypertarget{n_ary_8h_a014dc700057f2fddb2b891d1d9bb0c41}{}\label{n_ary_8h_a014dc700057f2fddb2b891d1d9bb0c41} 
+\index{n\+Ary.\+h@{n\+Ary.\+h}!y\+Coord@{y\+Coord}}
+\index{y\+Coord@{y\+Coord}!n\+Ary.\+h@{n\+Ary.\+h}}
+\subsubsection{\texorpdfstring{y\+Coord()}{yCoord()}}
+{\footnotesize\ttfamily int y\+Coord (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{N\+O\+DE,  }\item[{int}]{Window\+Height }\end{DoxyParamCaption})}
+
+
+
+Translates Tilford Reingold Integral y-\/value into Window coordinate. 
+
+Open GL (0,0) Refers to botom left corner while algorithm refers to the same as the top right corner, hence , node\textquotesingle{}s y value is subtracted from H\+E\+I\+G\+HT of window to set appropriate Open\+GL drawing point
+
+
+\begin{DoxyParams}{Parameters}
+{\em N\+O\+DE} & Node whose x-\/coordinate is to be extracted \\
+\hline
+{\em Window\+Height} & The height of created window \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{n_ary_8h_af601b4da58f07b53cf6cf36ad5b8cd50}{}\label{n_ary_8h_af601b4da58f07b53cf6cf36ad5b8cd50} 
+\index{n\+Ary.\+h@{n\+Ary.\+h}!maxX@{maxX}}
+\index{maxX@{maxX}!n\+Ary.\+h@{n\+Ary.\+h}}
+\subsubsection{\texorpdfstring{maxX}{maxX}}
+{\footnotesize\ttfamily int maxX =0}
+
+
+
+Maximum x -\/value of all nodes after finar positions are set , used to generate window W\+I\+D\+TH. 
+
+\hypertarget{n_ary_8h_ae853146681224745b378959c65ee98ce}{}\label{n_ary_8h_ae853146681224745b378959c65ee98ce} 
+\index{n\+Ary.\+h@{n\+Ary.\+h}!maxY@{maxY}}
+\index{maxY@{maxY}!n\+Ary.\+h@{n\+Ary.\+h}}
+\subsubsection{\texorpdfstring{maxY}{maxY}}
+{\footnotesize\ttfamily int maxY =0}
+
+
+
+The maximum y-\/value amongst all nodes after the tree drawing algorithm is run. 
+
+\hypertarget{n_ary_8h_a89c440999057ffb8b33b40958fb6f662}{}\label{n_ary_8h_a89c440999057ffb8b33b40958fb6f662} 
+\index{n\+Ary.\+h@{n\+Ary.\+h}!minX@{minX}}
+\index{minX@{minX}!n\+Ary.\+h@{n\+Ary.\+h}}
+\subsubsection{\texorpdfstring{minX}{minX}}
+{\footnotesize\ttfamily int minX =200}
+
+
+
+Minimum x -\/value of all nodes after finar positions are set , used to generate window W\+I\+D\+TH. 
+

@@ -1,0 +1,199 @@
+\hypertarget{binary_tree_t_r_8h}{}\section{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/2\+Tilford\+Reingold/binary\+Tree\+TR.h File Reference}
+\label{binary_tree_t_r_8h}\index{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/2\+Tilford\+Reingold/binary\+Tree\+T\+R.\+h@{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/2\+Tilford\+Reingold/binary\+Tree\+T\+R.\+h}}
+
+
+Tree Functions for Tilford Reingold.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structnodes}{nodes}
+\begin{DoxyCompactList}\small\item\em The Tilford Reingold Tree Node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structnodes}{nodes} \hyperlink{binary_tree_t_r_8h_af1ca97630a6a9a66aa170b4e2c09e94a}{node}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ \hyperlink{binary_tree_t_r_8h_a3fee222c1897fe8547477d007e8a1c65}{create\+Node} (int Input\+Value, \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em node used to refer to a node in the binary tree \end{DoxyCompactList}\item 
+\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ \hyperlink{binary_tree_t_r_8h_a4aebe922a43b1f8500db00465ee139be}{create\+Tree} (void)
+\begin{DoxyCompactList}\small\item\em Create Binary Tree to be drawn. \end{DoxyCompactList}\item 
+\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$ \hyperlink{binary_tree_t_r_8h_a12611ed9bb1d8a05bc28caa315dbe442}{tree\+Helper} (int input\+Values\mbox{[}$\,$\mbox{]}, int n)
+\begin{DoxyCompactList}\small\item\em Helper for \hyperlink{binary_tree_t_r_8h_a4aebe922a43b1f8500db00465ee139be}{create\+Tree()} \end{DoxyCompactList}\item 
+void \hyperlink{binary_tree_t_r_8h_afddcd3b664927dfdb95a70470defa39a}{preorder} (\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$\hyperlink{main_8c_aa570215f2f913275d6ff0d586e436d21}{root})
+\begin{DoxyCompactList}\small\item\em Preorder Walk and Helper Function. \end{DoxyCompactList}\item 
+int \hyperlink{binary_tree_t_r_8h_ab5ace9a45f7a1449c81c6376db1352e4}{x\+Coord} (\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$N\+O\+DE, int \hyperlink{n_ary_8h_a89c440999057ffb8b33b40958fb6f662}{minX})
+\begin{DoxyCompactList}\small\item\em Translates Tilford Reingold Integral x-\/value into Window coordinate. \end{DoxyCompactList}\item 
+int \hyperlink{binary_tree_t_r_8h_a014dc700057f2fddb2b891d1d9bb0c41}{y\+Coord} (\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$N\+O\+DE, int Window\+Height)
+\begin{DoxyCompactList}\small\item\em Translates Tilford Reingold Integral y-\/value into Window coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{binary_tree_t_r_8h_a6b5da86bc1dbe6625fe489986ad3520d}{max\+Height} =0
+\begin{DoxyCompactList}\small\item\em The maximum y-\/value amongst all nodes after the tree drawing algorithm is run. \end{DoxyCompactList}\item 
+int \hyperlink{binary_tree_t_r_8h_a89c440999057ffb8b33b40958fb6f662}{minX} =0
+\begin{DoxyCompactList}\small\item\em Minimum x -\/value of all nodes after final positions are set , used to generate window W\+I\+D\+TH. \end{DoxyCompactList}\item 
+int \hyperlink{binary_tree_t_r_8h_af601b4da58f07b53cf6cf36ad5b8cd50}{maxX} =0
+\begin{DoxyCompactList}\small\item\em Maximum x -\/value of all nodes after final positions are set , used to generate window W\+I\+D\+TH. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tree Functions for Tilford Reingold. 
+
+Specifies functions to create a binary search tree from user input data or hard coded data (See source code for \hyperlink{binary_tree_t_r_8h_a4aebe922a43b1f8500db00465ee139be}{create\+Tree()};) and sets all tree related fields to be used by the Tilford Reingold Tree Drawing Algorithm, Also provides functions for translating integral Wetherell Shannon outputs to window coordinates for drawing. 
+
+\subsection{Typedef Documentation}
+\hypertarget{binary_tree_t_r_8h_af1ca97630a6a9a66aa170b4e2c09e94a}{}\label{binary_tree_t_r_8h_af1ca97630a6a9a66aa170b4e2c09e94a} 
+\index{binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}!node@{node}}
+\index{node@{node}!binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structnodes}{nodes} \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node}}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{binary_tree_t_r_8h_a3fee222c1897fe8547477d007e8a1c65}{}\label{binary_tree_t_r_8h_a3fee222c1897fe8547477d007e8a1c65} 
+\index{binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}!create\+Node@{create\+Node}}
+\index{create\+Node@{create\+Node}!binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{create\+Node()}{createNode()}}
+{\footnotesize\ttfamily \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node}$\ast$ create\+Node (\begin{DoxyParamCaption}\item[{int}]{Input\+Value,  }\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+node used to refer to a node in the binary tree 
+
+Node Allocation
+
+A function to allocate space for a fresh node, initilise its attributes and return the pointer to it
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input\+Value} & value to be stored in node \\
+\hline
+{\em parent} & parent of node being created \\
+\hline
+\end{DoxyParams}
+\hypertarget{binary_tree_t_r_8h_a4aebe922a43b1f8500db00465ee139be}{}\label{binary_tree_t_r_8h_a4aebe922a43b1f8500db00465ee139be} 
+\index{binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}!create\+Tree@{create\+Tree}}
+\index{create\+Tree@{create\+Tree}!binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{create\+Tree()}{createTree()}}
+{\footnotesize\ttfamily \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node}$\ast$ create\+Tree (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Create Binary Tree to be drawn. 
+
+Creates a Binary Search Tree using the number of nodes and values of those nodes as specified within it \hypertarget{binary_tree_t_r_8h_afddcd3b664927dfdb95a70470defa39a}{}\label{binary_tree_t_r_8h_afddcd3b664927dfdb95a70470defa39a} 
+\index{binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}!preorder@{preorder}}
+\index{preorder@{preorder}!binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{preorder()}{preorder()}}
+{\footnotesize\ttfamily void preorder (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{root }\end{DoxyParamCaption})}
+
+
+
+Preorder Walk and Helper Function. 
+
+Prints the created tree in preorder representation and also assigns maxX , minX , and max\+Height
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & root of tree to be traversed \\
+\hline
+\end{DoxyParams}
+Also run once after tree drawing algorithms set x,y values to decide and assign maxX and minX values \hypertarget{binary_tree_t_r_8h_a12611ed9bb1d8a05bc28caa315dbe442}{}\label{binary_tree_t_r_8h_a12611ed9bb1d8a05bc28caa315dbe442} 
+\index{binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}!tree\+Helper@{tree\+Helper}}
+\index{tree\+Helper@{tree\+Helper}!binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{tree\+Helper()}{treeHelper()}}
+{\footnotesize\ttfamily \hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node}$\ast$ tree\+Helper (\begin{DoxyParamCaption}\item[{int}]{input\+Values\mbox{[}$\,$\mbox{]},  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Helper for \hyperlink{binary_tree_t_r_8h_a4aebe922a43b1f8500db00465ee139be}{create\+Tree()} 
+
+Works from within the \hyperlink{binary_tree_t_r_8h_a4aebe922a43b1f8500db00465ee139be}{create\+Tree()} function to find correct position for the next node and set related pointers
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Values\mbox{[}$\,$\mbox{]}} & List of integers to be used to create B\+ST \\
+\hline
+{\em n} & number of nodes \\
+\hline
+\end{DoxyParams}
+\hypertarget{binary_tree_t_r_8h_ab5ace9a45f7a1449c81c6376db1352e4}{}\label{binary_tree_t_r_8h_ab5ace9a45f7a1449c81c6376db1352e4} 
+\index{binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}!x\+Coord@{x\+Coord}}
+\index{x\+Coord@{x\+Coord}!binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{x\+Coord()}{xCoord()}}
+{\footnotesize\ttfamily int x\+Coord (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{N\+O\+DE,  }\item[{int}]{minX }\end{DoxyParamCaption})}
+
+
+
+Translates Tilford Reingold Integral x-\/value into Window coordinate. 
+
+Each integral coordinate is scaled by 100 to be visible appropriately in the screen (screen is typically 800x600 or greater), and is off set on the left by 50 pixels (as node radius drawn is 25 pixels)
+
+
+\begin{DoxyParams}{Parameters}
+{\em N\+O\+DE} & Node whose x-\/coordinate is to be extracted \\
+\hline
+{\em minX} & minimumX value of entire tree \\
+\hline
+\end{DoxyParams}
+\hypertarget{binary_tree_t_r_8h_a014dc700057f2fddb2b891d1d9bb0c41}{}\label{binary_tree_t_r_8h_a014dc700057f2fddb2b891d1d9bb0c41} 
+\index{binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}!y\+Coord@{y\+Coord}}
+\index{y\+Coord@{y\+Coord}!binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{y\+Coord()}{yCoord()}}
+{\footnotesize\ttfamily int y\+Coord (\begin{DoxyParamCaption}\item[{\hyperlink{binary_tree_w_s_8h_aafd781b4673cf2585cd9a156aebd08de}{node} $\ast$}]{N\+O\+DE,  }\item[{int}]{Window\+Height }\end{DoxyParamCaption})}
+
+
+
+Translates Tilford Reingold Integral y-\/value into Window coordinate. 
+
+Open GL (0,0) Refers to botom left corner while algorithm refers to the same as the top right corner, hence , node\textquotesingle{}s y value is subtracted from H\+E\+I\+G\+HT of window to set appropriate Open\+GL drawing point
+
+
+\begin{DoxyParams}{Parameters}
+{\em N\+O\+DE} & Node whose x-\/coordinate is to be extracted \\
+\hline
+{\em Window\+Height} & The height of created window \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{binary_tree_t_r_8h_a6b5da86bc1dbe6625fe489986ad3520d}{}\label{binary_tree_t_r_8h_a6b5da86bc1dbe6625fe489986ad3520d} 
+\index{binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}!max\+Height@{max\+Height}}
+\index{max\+Height@{max\+Height}!binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{max\+Height}{maxHeight}}
+{\footnotesize\ttfamily int max\+Height =0}
+
+
+
+The maximum y-\/value amongst all nodes after the tree drawing algorithm is run. 
+
+\hypertarget{binary_tree_t_r_8h_af601b4da58f07b53cf6cf36ad5b8cd50}{}\label{binary_tree_t_r_8h_af601b4da58f07b53cf6cf36ad5b8cd50} 
+\index{binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}!maxX@{maxX}}
+\index{maxX@{maxX}!binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{maxX}{maxX}}
+{\footnotesize\ttfamily int maxX =0}
+
+
+
+Maximum x -\/value of all nodes after final positions are set , used to generate window W\+I\+D\+TH. 
+
+\hypertarget{binary_tree_t_r_8h_a89c440999057ffb8b33b40958fb6f662}{}\label{binary_tree_t_r_8h_a89c440999057ffb8b33b40958fb6f662} 
+\index{binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}!minX@{minX}}
+\index{minX@{minX}!binary\+Tree\+T\+R.\+h@{binary\+Tree\+T\+R.\+h}}
+\subsubsection{\texorpdfstring{minX}{minX}}
+{\footnotesize\ttfamily int minX =0}
+
+
+
+Minimum x -\/value of all nodes after final positions are set , used to generate window W\+I\+D\+TH. 
+

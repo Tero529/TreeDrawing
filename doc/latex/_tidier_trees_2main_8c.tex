@@ -1,0 +1,74 @@
+\hypertarget{_tidier_trees_2main_8c}{}\section{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/\+Tidier\+Trees/main.c File Reference}
+\label{_tidier_trees_2main_8c}\index{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/\+Tidier\+Trees/main.\+c@{/\+Users/\+Tero529/\+Documents/\+Tree\+Drawing/source/\+Tidier\+Trees/main.\+c}}
+{\ttfamily \#include \char`\"{}binary\+Tree\+T\+R.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tilford\+Reingold.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}draw\+Functions\+T\+R.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$G\+L\+U\+T/glut.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_tidier_trees_2main_8c_a1e3b6d38df0786ccf7f938d60e386aae}{Init} ()
+\item 
+void \hyperlink{_tidier_trees_2main_8c_a6765cdcebe5c8445969d5f76345df457}{render} (void)
+\item 
+void \hyperlink{_tidier_trees_2main_8c_a9fd955bd42c22cd4dd38db0c5f4125f1}{key\+Functions} (unsigned char key, int \hyperlink{tidy__drawings_01___n__ary_2main_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int y)
+\item 
+int \hyperlink{_tidier_trees_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{binary_tree_t_r_8h_af1ca97630a6a9a66aa170b4e2c09e94a}{node} $\ast$ \hyperlink{_tidier_trees_2main_8c_aa570215f2f913275d6ff0d586e436d21}{root}
+\item 
+int \hyperlink{_tidier_trees_2main_8c_a59c3bba4b17cd5e19f149ea175fa6989}{W\+I\+D\+TH}
+\item 
+int \hyperlink{_tidier_trees_2main_8c_a4e81322eb1085aca9cd7c5527f5e4c6b}{H\+E\+I\+G\+HT}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_tidier_trees_2main_8c_a1e3b6d38df0786ccf7f938d60e386aae}{}\label{_tidier_trees_2main_8c_a1e3b6d38df0786ccf7f938d60e386aae} 
+\index{Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}!Init@{Init}}
+\index{Init@{Init}!Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Both Background and Drawing colour are set to Black The drawing mode is set to projection in orthographic mode with size equal to that of the window\hypertarget{_tidier_trees_2main_8c_a9fd955bd42c22cd4dd38db0c5f4125f1}{}\label{_tidier_trees_2main_8c_a9fd955bd42c22cd4dd38db0c5f4125f1} 
+\index{Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}!key\+Functions@{key\+Functions}}
+\index{key\+Functions@{key\+Functions}!Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}}
+\subsubsection{\texorpdfstring{key\+Functions()}{keyFunctions()}}
+{\footnotesize\ttfamily void key\+Functions (\begin{DoxyParamCaption}\item[{unsigned char}]{key,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+polls for event when pressed key==27 \hypertarget{_tidier_trees_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{_tidier_trees_2main_8c_a3c04138a5bfe5d72780bb7e82a18e627} 
+\index{Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}!main@{main}}
+\index{main@{main}!Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\hypertarget{_tidier_trees_2main_8c_a6765cdcebe5c8445969d5f76345df457}{}\label{_tidier_trees_2main_8c_a6765cdcebe5c8445969d5f76345df457} 
+\index{Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}!render@{render}}
+\index{render@{render}!Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void render (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Performs an Inorder walk and drawing First all the edges (left edges then right edges) in white Then fill area within each node circle using \hyperlink{draw_functions_t_r_8h_ac57ceaa27fa61046ca45b3fa41dd2b3a}{fill()} in red and finally draws a boundary around it in white
+
+\subsection{Variable Documentation}
+\hypertarget{_tidier_trees_2main_8c_a4e81322eb1085aca9cd7c5527f5e4c6b}{}\label{_tidier_trees_2main_8c_a4e81322eb1085aca9cd7c5527f5e4c6b} 
+\index{Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}!H\+E\+I\+G\+HT@{H\+E\+I\+G\+HT}}
+\index{H\+E\+I\+G\+HT@{H\+E\+I\+G\+HT}!Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}}
+\subsubsection{\texorpdfstring{H\+E\+I\+G\+HT}{HEIGHT}}
+{\footnotesize\ttfamily int H\+E\+I\+G\+HT}
+
+\hypertarget{_tidier_trees_2main_8c_aa570215f2f913275d6ff0d586e436d21}{}\label{_tidier_trees_2main_8c_aa570215f2f913275d6ff0d586e436d21} 
+\index{Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}!root@{root}}
+\index{root@{root}!Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}}
+\subsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \hyperlink{binary_tree_t_r_8h_af1ca97630a6a9a66aa170b4e2c09e94a}{node}$\ast$ root}
+
+\hypertarget{_tidier_trees_2main_8c_a59c3bba4b17cd5e19f149ea175fa6989}{}\label{_tidier_trees_2main_8c_a59c3bba4b17cd5e19f149ea175fa6989} 
+\index{Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}!W\+I\+D\+TH@{W\+I\+D\+TH}}
+\index{W\+I\+D\+TH@{W\+I\+D\+TH}!Tidier\+Trees/main.\+c@{Tidier\+Trees/main.\+c}}
+\subsubsection{\texorpdfstring{W\+I\+D\+TH}{WIDTH}}
+{\footnotesize\ttfamily int W\+I\+D\+TH}
+
