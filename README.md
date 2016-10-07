@@ -23,5 +23,3 @@ We have used 3 fundamental algorithms to accomplish the rendering part of the pr
 1. <b> Generalised Bresenham's Line Drawing </b> 
 2. <b> Midpoint Circle Algorithm Using 8-Way symmetry </b>
 3. <b> Variation of 4-Neighbour Boundary Fill </b> \n Starting from circle's center a 4 neighbour fill is applied while the point has not been visited and does not lie outside the circle
-
-\see drawFunctions.h
