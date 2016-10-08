@@ -1,0 +1,165 @@
+<h1>Tilford Reingold</h1>
+
+<h2>1. Description and Efficiency</h2>
+
+<h3>AESTHICS</h3>
+
+<p>1. Nodes of a tree at the same height should lie along a straight line, and the straight lines defining the level should be parallel.</p>
+
+<p>2.In a binary tree, each left son should be positioned left of its father and each right son right of its father.</p>
+
+<p>3.A parent should be centered over its children.</p>
+
+<p>4.A tree and its mirror image should produce drawings that are reflections of one another; moreover, a subtree should be drawn the same way regardless of where it occurs in the tree.</p>
+
+<h3>ALGORITHM</h3>
+
+<p>Two subtrees of a node should be made independently,</p>
+
+<p>and then placed as close together as possible. Both the subtrees should be rigid to avoid positioning errors .</p>
+
+<p>Assigning relative x coordinates to all nodes. </p>
+
+<h4>During a POSTORDER TRANSVERSAL :</h4>
+
+<ul>
+    <li>At each node T, imagine that its two subtrees have been drawn and cut out of paper along their contours.</li>
+    <li>Superimpose the two subtrees at their roots and move them apart until no two points are touching. </li>
+    <li>Initially their roots are separated by some agreed upon minimum distance; then at the next lower level, we push them apart until minimum separation is established there. </li>
+    <li>This process continues at successively lower levels until we get to the bottom of the shorter subtree. </li>
+    <li>In the end ,fix the position of the subtrees relative to their father which is placed at centre of the sons.</li>
+</ul>
+
+
+<h4>Keep track of the leftmost and rightmost nodes on the lowest level of the subtree; only these nodes could ever be threaded.(Extreme descendents)</h4>
+
+<ul>
+    <li>If the current subtree is a single node, then that node is used for threading.</li>
+    <li>Otherwise ,its extreme descendants can easily be chosen from among the extreme descendants of its sons.</li>
+</ul>
+
+
+<h4>Threading, is needed only if the subtrees joined at the current node have different heights and neither is empty.</h4>
+
+<ul>
+    <li>The thread is stored in the left link field if the node to which it points is to its left, and in the right link field otherwise. </li>
+</ul>
+
+<p>The relative positioning is converted to absolute coordinates by preorder transversal.</p>
+
+<h3>MATHEMATICAL ANALYSIS :</h3>
+
+<p>Let : n(T)= number of nodes in the tree.</p>
+
+<p> h(T)= height of the tree</p>
+
+<p>The time required by the algorithm depends on the loop for determining minimum separation .</p>
+
+<p>F(T)= the number of times the body of the loop is executed for a tree T.</p>
+
+<p>Consider a tree T with Tl and Tr as left and right subtree.</p>
+
+<p>Then ,</p>
+
+<p> F(T)=F(Tl)+F(Tr)+ min[h(TI),h(Tr)]</p>
+
+<p>then time complexity is F(T)=n(T)-h(T)</p>
+
+<p><b>BASE CASE</b> : For an empty tree , F(nil) = 0 .</p>
+
+<p><b>INDUCTIVE CASE</b> : Suppose it is true for a tree Tl with k nodes such that k &lt;N. Then for tree T with N nodes,</p>
+
+<p>F(T) = [k - h(Tl)] +[N - k - 1 - h(Tr)] + min [h(Tl), h(Tr)]</p>
+
+<p>= N - 1 - h(Tl) - h(Tr) + min [h(Tl), h(Tr)]</p>
+
+<p>=N - (max[h(Tl),h(Tr)] + 1)</p>
+
+<p>By principle of mathematical induction </p>
+
+<p><b>F(T)=n(T)-h(T)</b></p>
+
+<p>Hence the algorithm runtime is linear .</p>
+
+<p><br />
+</p>
+
+<p><b>Worst case : Complete binary tree </b></p>
+
+<p>F(T)= O(n(T)) - O(log n(T));</p>
+
+<p><b>F(T)=O(n(T))</b></p>
+
+<p><br />
+</p>
+
+<h2>2. Output Analysis</h2>
+
+<p>We tested the function with randomly generated inputs of sizes</p>
+
+<ul>
+    <li>100</li>
+    <li>1,000</li>
+    <li>10,000</li>
+</ul>
+
+<p>The input and output files of the testing can be found in the “testFiles” directory</p>
+
+<p>From our testing we found the following data (the same input files were used for both algorithms to aid comparison)</p>
+
+<p><b>Input Size 100</b></p>
+
+<p>Y-Range: 13 levels</p>
+
+<p>Output: <a href="../../testFiles/TilfordReingold/output100.txt"> 100</a></p>
+
+<p><b>Input Size 1,000</b></p>
+
+<p>Height: 22 levels</p>
+
+<p>Output: <a href="../../testFiles/TilfordReingold/output1000.txt"> 1000</a></p>
+
+<p><b>Input Size 10,000</b></p>
+
+<p>Height: 7873 levels</p>
+
+<p>Output: <a href="../../testFiles/TilfordReingold/output100000.txt"> 100000</a></p>
+
+
+<h2>3. Memory / Space Analysis</h2>
+
+<p>Let h(T)= height of the tree =h</p>
+
+<p>n(T)=numbers of nodes in the tree= n</p>
+
+<p>According to the algorithm,</p>
+
+<ul>
+    <li>For already defined variables = Constant space size required= k</li>
+    <li>Since there is no other storage space required which depends on the input by the user </li>
+</ul>
+
+<p>Total space required= O(k)</p>
+
+<p>Hence the algorithm has O(1)- Constant Space Complexity</p>
+
+<p>In addition to this, space is also required to store the nodes of the tree. Each node of the tree according to the paper ,contained the following: </p>
+
+<p>LLINK,RLINK : <b>LINK</b>;</p>
+
+<p>XCOORD,YCOORD: <b>INTEGER</b>;</p>
+
+<p>OFFSET : <b>INTEGER</b>; </p>
+
+<p>VALUE : <b>INTEGER</b></p>
+
+<p>THREAD: <b>BOOLEAN</b> </p>
+
+<p>Hence total space occupied by a node (Assuming 4 byte pointers and integer data and 1 Byte boolean data) is 4*4 + 2*4 + 1*1.</p>
+
+<p>Hence for a tree with n nodes, the space complexity is = O(25*n(T))= O(n) Linear</p>
+
+<p><b>Hence total space complexity for Tilford Reingold is 2*O(n) = O(n) </b></p>
+<a href="N-AryTreeAndRemarks.html"> Next Page </a>
+<p></p>
+<a href="WetherellShannon.html"> Previous Page </a>

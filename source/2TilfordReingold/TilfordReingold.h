@@ -62,12 +62,12 @@ struct extremepoints{
 void generateTilfordReingold(node *root){
     extr rightMost,leftMost;
     ofset(root,1,&rightMost,&leftMost);
-    createPos(root,10);
+    createPos(root,2);
 }
 
-void ofset(node *t,int level,extr *rmost,extr *lmost){/
+void ofset(node *t,int level,extr *rmost,extr *lmost){
     
-    node *l //Left Son
+    node *l; //Left Son
     node *r;//Right Son
     extr lr,//right extreme of left subtree
         ll, //left extreme of left subtree

@@ -1,17 +1,19 @@
 \mainpage Computer Graphics IS F311 Assignment 1 
 \section Contributors
  *  Varun Natu 2014A7PS841H
- *  Ayush Sharma 2014A7PS   H
+ *  Ayush Sharma 2014A7PS039H
  *  Akanksha Pandey 2014A7PS151H
 \section Implementations
 \subsection algo1 Wetherell Shannon (WS) 
-The algorithm specified by Wetherell and Shannon has been implemented, and the source code can be found in the directory "source/WetherellShannon" \n The Implementation has support for both variations of the algorithm mentioned in the paper i.e 
+The algorithm specified by Wetherell and Shannon has been implemented, and the source code can be found in the directory "source/WetherellShannon"
+\n The Implementation has support for both variations of the algorithm mentioned in the paper i.e 
 * The NORMAL implementation which centers parents over it's children but is not minimum in width
 * The MODIFIED implementation which provides minimum width but may produce 'UGLY' trees due to the absence of centering 
 \n The trees that have been generated (both on user input and otherwise) and used for WS binary search trees.\n
 \see mainWS.c WetherellShannon.h
 \subsection algo2 Tilford Reingold (TR)
-The algorithm specified by Tilford and Reingold has been implemented and the source code can be found in the directory "source/TilfordReingold".\nOnce again the tree type that has been used for this implementation of TR is the binary search tree.
+The algorithm specified by Tilford and Reingold has been implemented and the source code can be found in the directory "source/TilfordReingold".
+\nOnce again the tree type that has been used for this implementation of TR is the binary search tree.
 \see mainTR.c TilfordReingold.h
 \subsection algo3 Extension to N-ary Trees
 Using the previous two papers as inspiration we have extended the main concept of the WS Algorithm to accomodate arbtrarily size trees.

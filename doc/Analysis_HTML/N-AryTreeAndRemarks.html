@@ -1,0 +1,80 @@
+<h1>Extension to N-ary Trees and Remarks</h1>
+
+
+<h2>Our N-Ary Tree Implementation of WetherellShannon</h2>
+
+<p>Taking inspiration from the two algorithms, we decided to extend the Wetherell Shannon Algorithm to accommodate arbitrary n-ary trees.</p>
+
+
+<p>To accomplish this we had to store the node of the tree differently as any number of children may exist, hence each node now contains 4 pointers </p>
+
+<p>1. to its parent </p>
+
+<p>2. to its first children </p>
+
+<p>3. to its last children</p>
+
+<p>4. to its next siblings (other nodes which have the same parent)</p>
+
+<p><br />
+</p>
+
+<p>Another Issue with n-ary trees was <b>developing a traversal method</b></p>
+
+<p>So we get the preorder of the tree by traversing first to the node’s first child and then after we have completed parsing the child we got to its siblings.</p>
+
+<p>After reaching the final child to which the next sibling is absent we go to the parent</p>
+
+<p><br />
+</p>
+
+<p>For the positioning algorithm itself, we proceed in a manner similar to that of Wetherell Shannon</p>
+
+<ul>
+<li>In the first transition we calculate the relative position of the each node and the modifier values</li>
+<li>In the second transition we calculate the final position of each node but adding the accumulated modifier values</li>
+</ul>
+
+
+<p>The time and space complexity are same as that of the WETHERELL AND SHANNON for binary trees in that it is O(n)</p>
+
+
+<h3>Difficulties faced during the Implementation for n-ary trees:-</h3>
+
+<p>1) Representation of the tree using the 4 pointers limits the traversal of the tree to pre order</p>
+
+<p>2) To get Postorder we have to maintain a trigger “”tr” to get whether the node was visited or not </p>
+
+<p>3) Complexity of the algorithm changes due to transitions,as we have to take in to account several cases like a node with only 1 child ,a node with no child,a node with multiple children and also the last node among the siblings.</p>
+
+
+<h2>Remarks</h2>
+
+<h3>Comparison of Wetherell Shannon and Tilford Reingold</h3>
+
+<ul>
+<li>Time complexity is the same for both algorithms, in that is linear</li>
+<ul>
+<li>However, TilfordReingold requires a recursive implementation , and will thus be less efficient as compared to the iterative solution of Wetherell Shannon</li>
+</ul>
+
+<li>Space complexity is also the same for both algorithms in that it is linear ( though the asymptotic constants are greater for Wetherell Shannon due to nextPos[ ] and modifier[ ]</li>
+<li>Wetherell Shannon draws uglier trees with respect to ensuring minimum width</li>
+<li>Telford Reingold ensures both centering of parent over children as well as minimum width.</li>
+</ul>
+
+
+
+<h3>Difficulties encountered In Drawing</h3>
+
+<ul>
+<li>Converting the integral values output by the algorithms to window coordinates</li>
+<li>TilfordReingold requires an initial position for the root and thus may result in negative x positions, this had to be resolved by drawing relative to the minimum x value</li>
+<li>Generalising the Bresenham Line Drawing Function to handle lines of all slopes</li>
+<li>Allowing an exit from the created window using the escape key instead of CTRL + c</li>
+<li>Making the Drawing functions uniform so that the same function would work for all three algorithmic implementations in the project</li>
+</ul>
+<a href="TilfordReingold.htm"> Previous Page </a>
+<p></p>
+<b> Detailed Documentation of our code can be found in the carefully constructed Doxygen files included in the project or by reading the source code itself </b>
+<a href="../Doxygen_html/index.html"> Main Documentation </a>

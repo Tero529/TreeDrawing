@@ -40,7 +40,7 @@ int main(int argc,char **argv){
     /*! First runs createTree() to create tree to be drawn
      */
     root=createTree();
-    
+    preorder(root);
     /*! It then runs Tree Drawing Algorithm in "TilfordReingold.h" using the root of the
      tree generated earlier*/
     generateTilfordReingold(root);
@@ -54,7 +54,7 @@ int main(int argc,char **argv){
      */
     WIDTH=(maxX-minX+2)*50 ;
     HEIGHT=2*(maxHeight)*50;
-    
+
     
     /*! Uses GLUT to initiliaze window with the created WIDTH
      *and HEIGHT and places window at top left of screen
@@ -73,7 +73,7 @@ int main(int argc,char **argv){
     glutKeyboardFunc(keyFunctions);// Registering key callback function
     
     glutMainLoop(); //Main graphics loop which polls for events
-    
+
     return 0;
 
 }

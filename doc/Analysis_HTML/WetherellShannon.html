@@ -1,0 +1,139 @@
+<h1>Wetherell Shannon</h1>
+
+
+<h2>1. Description and  Time Efficiency</h2>
+
+<h3>AESTHICS</h3>
+
+<p>1. Nodes of a tree at the same height should lie along a straight line, and the straight lines defining the level should be parallel.</p>
+
+<p>2. In a binary tree, each left son should be positioned left of its father and each right son right of its father.</p>
+
+<p>3. A parent should be centered over its children.</p>
+
+<p><br />
+</p>
+
+<h3>ALGORITHM</h3>
+
+<h4>Computing Y coordinate</h4>
+
+<ul>
+<li>Each node's y-coordinate is a multiple of its height.</li>
+<li>This is saved as the yPos attribute in our code</li>
+</ul>
+
+<h4>Computing X coordinate</h4>
+
+<ul>
+<li>Array : <b>next_pos</b> stores the next available node position for each level in the tree. </li>
+<li>If a leaf at level <b>h</b> is under consideration, placing the leaf at <b>next_pos [h] </b>is legal and satisfies the minimum width requirement.</li>
+<li>Integer <b>place</b> stores ,for an internal node, the average of its sons' positions </li>
+<li>The actual position assigned is the maximum of the <b>place </b>and <b>next_pos [h],</b> since sons may try to drag their father too far to the left and cause the father to collide with his relative to the left.</li>
+<li>For each node store the distance to the <b>place</b> in a <b>modifier </b>field. During the first pass, which assigns positions a modifier is kept for each level.</li>
+<li>This is saved as the xPos attribute in our code</li>
+</ul>
+
+<h4>Producing Minimum Width Tree (may violate Aesthetic 3)</h4>
+
+<ul>
+<li>In the second <b>while loop </b>,pass variable <b>modifier_sum</b> in a pre order walk .</li>
+<li>maintain for each tree level the actual next position available at the leaf </li>
+<li>Final position of a node is the <b>minimum</b> of the <b>next available position </b>at the node's level, its <b>left son's position plus one</b>, its <b>father's position plus one</b> (for a right son), and the position that would have been applied by above algorithm .</li>
+<li>The MODIFIED second pass implements this variation of the algorithm</li>
+</ul>
+
+<p><br/>
+</p>
+
+<h4>Mathematical Analysis of Time Complexity</h4>
+
+<p>Let : n(T)= number of nodes in the tree.</p>
+
+<p>h(T)= height of the tree.</p>
+
+<p>The time required by the algorithm depends on the two while loops. </p>
+
+<p>F(T)= the number of times the body of the loop is executed for a tree T.</p>
+
+<p>F(T)=F(L1)+F(L2)</p>
+
+<p>Here,</p>
+
+<p>L1= while loop for determining X coordinate</p>
+
+<p>L2= while loop for modifying X coordinates to produce minimum width tree</p>
+
+<p>F(L1)= It traverses through the enter tree. (n(T))</p>
+
+<p>F(L2)= traverses through the enter tree. (n(T))</p>
+
+<p><b>Hence , F(T)= 2n(T)</b></p>
+
+<p><br />
+</p>
+
+<h2>2. Output Analysis</h2>
+<p>We tested the function with randomly generated inputs of sizes</p>
+<ul>
+<li>100</li>
+<li>1,000</li>
+<li>10,000</li>
+</ul>
+
+<p>The input and output files of the testing can be found in the Ã¢â‚¬Å“testFilesÃ¢â‚¬Â directory</p>
+
+
+<p>From our testing we found the following data (the same input files were used for both algorithms to aid comparison)</p>
+
+
+<p><b>Input Size 100</b></p>
+
+<p>Y-Range: 13 levels</p>
+
+<p>Output: <a href="../../testFiles/WetherellShannon/output100.txt"> 100</a></p>
+
+<p><b>Input Size 1,000</b></p>
+
+<p>Height: 22 levels</p>
+
+<p>Output: <a href="../../testFiles/WetherellShannon/output1000.txt"> 1000</a></p>
+
+<p><b>Input Size 10,000</b></p>
+
+<p>Height: 7873 levels</p>
+
+<p>Output: <a href="../../testFiles/WetherellShannon/output10000.txt"> 10000</a></p>
+
+<p><br />
+</p>
+
+<h2>3. Memory / Space Analysis</h2>
+
+<p>Let h(T)= height of the tree =h n(T)=numbers of nodes in the tree= n</p>
+
+<p>According to the algorithm, </p>
+
+<ul>
+<li>Size of Array next_pos[ ]= h(T)</li>
+<li>Size of Array modifier[]= h(T)</li>
+<li>For other variables = Constant space size required= k</li>
+</ul>
+
+<p>Total space required= 2*h(T)+k = O(h(T)+k) =O(h) Hence the algorithm has <b>O(n)- L</b>inear Space Complexity for additional storage</p>
+
+<p>In addition to this, space is also required to store the nodes of the tree. Each node of the tree l according to the paper ,contained the following: </p>
+
+<p>data: <b>integer</b>;<br />
+father <b>branch</b>;<br />
+left_son, right_son <b>branch</b>;<br />
+height : <b>integer</b>;<br />
+x, y <b>integer</b>;<br />
+status: (first_visit, left_visit, right_visit); modifier : <b>integer</b>; </p>
+
+<p>Hence total space occupied by a node (Assuming 4 byte pointers and integer data) is 4*4 +4*3.</p>
+
+<p>Hence for a tree with n nodes, the space complexity is = O(28*n(T))= O(n) <b>Linear</b></p>
+
+<p><b>Hence total space complexity for Wetherell Shannon is 2*O(n) = O(n) </b></p>
+<a href="TilfordReingold.htm"> Next Page </a>

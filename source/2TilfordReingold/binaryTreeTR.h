@@ -117,18 +117,18 @@ node *createTree(void){
     int n;
     /*Commented Lines can be uncommented to enable/disable user defined tree drawing */
     
-    //printf("How many values? ");
+   // printf("How many values? ");
     //scanf("%d",&n);
     n=12;
     int inputValues[]={7,10,4,54,2,6,9,15,1,3,8,25};
+    //int inputValues[n];
     int counter=0;
-    /*for(counter=0;counter<n;counter++)
-     scanf("%d",&inputValues[counter]);
-     */
+    //for(counter=0;counter<n;counter++)
+     //scanf("%d",&inputValues[counter]);
+    
     node *root=treeHelper(inputValues,n);
 
     printf("Tree created is (inorder representation)\n");
-    preorder(root);
     
     
     printf("\n");
@@ -196,7 +196,7 @@ void preorder(node *root){
 
 
 int xCoord(node *NODE,int minX){
-    return ( (NODE->xPos - minX) * 50 );
+    return ( (NODE->xPos - minX) * 50 +50);
 }
 
 int yCoord(node *NODE,int WindowHeight){
